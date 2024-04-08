@@ -16,6 +16,8 @@ public class Usuario {
 
     private String id;
 
+    private String cel;
+
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
@@ -51,5 +53,14 @@ public class Usuario {
 
     public void setId(String id) {
         this.id = id;
+    }
+    
+
+    public String getCel() {
+        return cel;
+    }
+
+    public void setCel(String cel) {
+        this.cel = cel;
     }
 }
