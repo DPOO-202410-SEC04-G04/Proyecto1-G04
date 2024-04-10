@@ -24,10 +24,10 @@ public class Pintura extends Pieza{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pintura (String pAutor, String pTitulo, Date pAnio, String pLugarDeCreacion, Estado pEstado, float pPrecio, boolean pDispoinibilidad, TipoCompra pTipoCompra, ArrayList<Float> dimensiones,
+    public Pintura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, ArrayList<Float> dimensiones,
     float espacioDeMemoria, String detallesAdicionales){
         
-        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra);
+        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.dimensiones = dimensiones;
         this.espacioDeMemoria = espacioDeMemoria;
         this.detallesAdicionales = detallesAdicionales;

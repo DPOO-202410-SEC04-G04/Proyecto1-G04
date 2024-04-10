@@ -22,10 +22,10 @@ public class Escultura extends Pieza {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Escultura (String pAutor, String pTitulo, Date pAnio, String pLugarDeCreacion, Estado pEstado, float pPrecio, boolean pDispoinibilidad, TipoCompra pTipoCompra, ArrayList<Float> dimensiones,
+    public Escultura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, ArrayList<Float> dimensiones,
     String tipoArte){
         
-        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra);
+        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.dimensiones = dimensiones;
         this.tipoArte = tipoArte;
 

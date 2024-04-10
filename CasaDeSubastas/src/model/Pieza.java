@@ -19,23 +19,25 @@ public class Pieza {
 
     private String titulo;
 
-    private Date anio;
+    private String anio;
 
     private String lugarDeCreacion;
 
-    private Estado estado;
+    private String estado;
 
     private float precio;
 
     private boolean disponibilidad;
 
-    private TipoCompra tipoCompra;
+    private String tipoCompra;
+
+    private String tipoPieza;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pieza(String pAutor, String pTitulo, Date pAnio, String pLugarDeCreacion, Estado pEstado, float pPrecio, boolean pDispoinibilidad, TipoCompra pTipoCompra){
+    public Pieza(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza){
         this.id = UUID.randomUUID().toString();
         this.autor = pAutor;
         this.titulo = pTitulo;
@@ -45,6 +47,7 @@ public class Pieza {
         this.precio = pPrecio;
         this.disponibilidad = pDispoinibilidad;
         this.tipoCompra = pTipoCompra;
+        this.tipoPieza = tipoPieza;
     }
 
     //----------------------------------------------
@@ -76,11 +79,11 @@ public class Pieza {
         this.titulo = titulo;
     }
 
-    public Date getAnio() {
+    public String getAnio() {
         return anio;
     }
 
-    public void setAnio(Date anio) {
+    public void setAnio(String anio) {
         this.anio = anio;
     }
 
@@ -92,11 +95,11 @@ public class Pieza {
         this.lugarDeCreacion = lugarDeCreacion;
     }
 
-    public Estado getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Estado estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -116,11 +119,17 @@ public class Pieza {
         this.disponibilidad = disponibilidad;
     }
 
-    public TipoCompra getTipoCompra() {
+    public String getTipoCompra() {
         return tipoCompra;
     }
 
-    public void setTipoCompra(TipoCompra tipoCompra) {
+    public void setTipoCompra(String tipoCompra) {
         this.tipoCompra = tipoCompra;
+    }
+
+    public String editarObras(){
+        String texto = "";
+        texto+="\n"+id+";"+autor+";"+titulo+";"+anio+";"+lugarDeCreacion+";"+estado+";"+String.valueOf(precio)+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza;
+        return texto;
     }
 }

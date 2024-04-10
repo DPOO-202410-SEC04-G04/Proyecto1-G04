@@ -1,5 +1,8 @@
 package model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -47,6 +50,22 @@ public class Galeria {
      * @param valorMinimo
      * @param user
      */
+
+
+     public void agregarlinea(String ruta, String texto){
+        try {
+            FileWriter fileWriter = new FileWriter(ruta, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(texto);
+            bufferedWriter.close();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+     }
+
+
     public void crearSubasta(String idPieza, float valorInicial, float valorMinimo, Usuario user){
         if(user.getTipoUsuario().equals("Administrador")){
             for(Pieza pieza:inventario){
@@ -74,9 +93,11 @@ public class Galeria {
 
     }
 
-    public void addPieza(String pAutor, String pTitulo, Date pAnio, String pLugarDeCreacion, Estado pEstado, float pPrecio, boolean pDispoinibilidad, TipoCompra pTipoCompra){
-        Pieza pieza = new Pieza(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra);
+    public void addPieza(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza){
+        Pieza pieza = new Pieza(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza);
         inventario.add(pieza);
+        String linea = pieza.editarObras();
+        agregarlinea(".\\CasaDeSubastas\\src\\data\\ObrasdeArte.txt", linea);
     }
 
     public void addUsuario(String tipoUsuario){

@@ -23,10 +23,10 @@ public class Video extends Pieza{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Video (String pAutor, String pTitulo, Date pAnio, String pLugarDeCreacion, Estado pEstado, float pPrecio, boolean pDispoinibilidad, TipoCompra pTipoCompra, float duracion,
+    public Video (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, float duracion,
     float espacioDeMemoria, String detallesAdicionales){
         
-        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra);
+        super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.duracion = duracion;
         this.espacioDeMemoria = espacioDeMemoria;
         this.detallesAdicionales = detallesAdicionales;
