@@ -97,6 +97,30 @@ public class Galeria {
         Pieza pieza = new Pieza(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza);
         inventario.add(pieza);
         String linea = pieza.editarObras();
+
+        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+    }
+
+
+    public void addEscultura(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones,
+    String materiales, String peso, boolean necesitaElectricidad, String tipoArte, String detallesAdicionales){
+        Escultura pieza = new Escultura(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, dimensiones, materiales, peso, necesitaElectricidad, tipoArte, detallesAdicionales);
+        inventario.add(pieza);
+        String linea = pieza.editarObrasEscultura();
+        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+    }
+
+    public void addPintura(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones, String detallesAdicionales){
+        Pintura pieza = new Pintura(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, dimensiones, detallesAdicionales);
+        inventario.add(pieza);
+        String linea = pieza.editarObrasPintura();
+        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+        }
+
+    public void addVideo(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, Float duracion, Float espacioDeMemoria, String detallesAdicionales){
+        Video pieza = new Video(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, duracion, espacioDeMemoria, detallesAdicionales);
+        inventario.add(pieza);
+        String linea = pieza.editarObrasVideo();
         agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
     }
     
@@ -192,4 +216,5 @@ public class Galeria {
     public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+    
 }

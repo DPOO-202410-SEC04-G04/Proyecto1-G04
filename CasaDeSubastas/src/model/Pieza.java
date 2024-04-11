@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 import java.util.UUID;
 
-public class Pieza {
+public class Pieza{
     //----------------------------------------------
     // CONSTANTS
     //----------------------------------------------
@@ -13,25 +13,25 @@ public class Pieza {
     // ATRIBUTES
     //----------------------------------------------
 
-    private String id;
+    protected String id;
 
-    private String autor;
+    protected String autor;
 
-    private String titulo;
+    protected String titulo;
 
-    private String anio;
+    protected String anio;
 
-    private String lugarDeCreacion;
+    protected String lugarDeCreacion;
 
-    private String estado;
+    protected String estado;
 
-    private float precio;
+    protected float precio;
 
-    private boolean disponibilidad;
+    protected boolean disponibilidad;
 
-    private String tipoCompra;
+    protected String tipoCompra;
 
-    private String tipoPieza;
+    protected String tipoPieza;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -132,4 +132,6 @@ public class Pieza {
         texto+="\n"+id+";"+autor+";"+titulo+";"+anio+";"+lugarDeCreacion+";"+estado+";"+String.valueOf(precio)+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza;
         return texto;
     }
+
+
 }
