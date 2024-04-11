@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import model.Comprador;
 
 public class Galeria {
 
@@ -122,6 +123,11 @@ public class Galeria {
         inventario.add(pieza);
         String linea = pieza.editarObrasVideo();
         agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+    }
+    
+    public void addPago(String ID, float valorPago, String comprador, Pieza piezaComprada, String formaPago)
+    {
+    	
     }
     
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import model.Comprador;
 
 public class Pagos {
     //----------------------------------------------
