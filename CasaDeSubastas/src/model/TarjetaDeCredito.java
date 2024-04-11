@@ -22,8 +22,8 @@ public class TarjetaDeCredito extends Pagos{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public TarjetaDeCredito(String id, float valorPago, String comprador, long numero, int codigoSeguridad, Date fechaVencimiento){
-        super(id, valorPago, comprador);
+    public TarjetaDeCredito(String id, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago, long numero, int codigoSeguridad, Date fechaVencimiento){
+        super(id, valorPago, comprador, piezaComprada, formaPago);
         this.numero = numero;
         this.codigoSeguridad = codigoSeguridad;
         this.fechaVencimiento = fechaVencimiento;

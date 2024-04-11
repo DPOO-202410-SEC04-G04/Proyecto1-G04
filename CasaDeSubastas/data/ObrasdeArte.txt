@@ -2,3 +2,4 @@
 2;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;false;Efectivo;Pintura
 9c8da8ae-cc77-425b-9092-9d5e1b52e9c1;Juan Jose;Cali;03/07/2000;Colombia;Bodega;50000.0;true;transferencia electronica;video
 a270a734-acf5-4c9a-ace6-af4f4e470ea4;Sandro Botticelli;El nacimiento de Venus;01/01/1485;Italia;Exhibida;200000.0;true;Efectivo;Pintura
+d6d3f72a-66eb-4de9-908b-a3b4b41deb35;e;eee;2;e;e;3.0;false;e;e

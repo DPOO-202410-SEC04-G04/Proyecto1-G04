@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Pagos {
     //----------------------------------------------
     // CONSTANTS
@@ -14,17 +16,23 @@ public class Pagos {
 
     private float valorPago;
 
-    private String comprador;
+    private Comprador comprador;
+    
+    private Pieza piezaComprada;
+    
+    private String formaPago;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pagos(String ID, float VALORPAGO, String COMPRADOR){
+    public Pagos(String ID, float VALORPAGO, Comprador COMPRADOR, Pieza piezaComprada, String formaPago){
         //TODO: Constructor pagos
     	this.id = ID;
     	this.valorPago = VALORPAGO;
     	this.comprador = COMPRADOR;
+    	this.piezaComprada = piezaComprada;
+    	this.formaPago = formaPago;
     }
 
     //----------------------------------------------
@@ -42,9 +50,14 @@ public class Pagos {
     	return this.valorPago;
     }
     
-    public String getComprador()
+    public Comprador getComprador()
     {
     	return this.comprador;
+    }
+    
+    public Pieza getPiezaComprada()
+    {
+    	return this.piezaComprada;
     }
     
     public void setID(String ID)
@@ -57,9 +70,40 @@ public class Pagos {
     	this.valorPago = VALORPAGO;
     }
     
-    public void setComprador(String COMPRADOR)
+    public void setComprador(Comprador COMPRADOR)
     {
     	this.comprador = COMPRADOR;
+    }
+    
+    public void setPiezaComprada(Pieza PIEZA)
+    {
+    	this.piezaComprada = PIEZA;
+    }
+    
+    public String getFormaPago()
+    {
+    	return this.formaPago;
+    }
+    
+    public void realizarPago(Pagos pago)
+    {
+    	float limite = pago.comprador.getValorMaxCompra();
+    	ArrayList<Pieza> lista = pago.comprador.getHistorialPiezas();
+    	float valorPieza = pago.piezaComprada.getPrecio();
+    	float suma = 0;
+    	for(Pieza pieza : lista)
+    	{
+    		suma += pieza.getPrecio();
+    	}
+    	if((suma+valorPieza)>limite)
+    	{
+    		System.out.println("El valor de la compra excede el limite permitido");
+    	}
+    	else
+    	{
+    		pago.comprador.setValorMaxCompra(suma+valorPieza);
+    		
+    	}
     }
     
 }

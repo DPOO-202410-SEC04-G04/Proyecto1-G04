@@ -36,6 +36,26 @@ public class Comprador extends Usuario{
     //----------------------------------------------
     // METHODS
     //----------------------------------------------
+    
+    public float getValorMaxCompra()
+    {
+    	return this.valorMaxCompra;
+    }
+    
+    public ArrayList<Pieza> getHistorialPiezas()
+    {
+    	return this.historialPiezas;
+    }
+    
+    public void setValorMaxCompra(float valor)
+    {
+    	this.valorMaxCompra = valor;
+    }
+    
+    public void añadirPiezaHistorial(Pieza pieza)
+    {
+    	historialPiezas.add(pieza);
+    }
 
     public void realizarCompraPrecioFijo(String idCompraDirecta, float valorOfertado){
         /*
@@ -64,4 +84,6 @@ public class Comprador extends Usuario{
     public void realizarOfertaSubasta(){
 
     }
+    
+    
 }

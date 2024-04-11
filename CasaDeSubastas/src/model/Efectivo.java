@@ -16,8 +16,8 @@ public class Efectivo extends Pagos {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Efectivo(String id, float valorPago, String comprador, float dineroTotal){
-        super(id, valorPago, comprador);
+    public Efectivo(String id, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago, float dineroTotal){
+        super(id, valorPago, comprador, piezaComprada, formaPago);
         this.dineroTotal = dineroTotal;
         
         //TODO: Constructor efectivo
