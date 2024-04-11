@@ -1,6 +1,6 @@
 package model;
 
-public class TransferenciaElectornica extends Pagos {
+public class TransferenciaElectronica extends Pagos {
     //----------------------------------------------
     // CONSTANTS
     //----------------------------------------------
@@ -16,7 +16,7 @@ public class TransferenciaElectornica extends Pagos {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public TransferenciaElectornica(){
+    public TransferenciaElectronica(){
         super();
         //TODO: Constructor Transferencia Electronica
     }

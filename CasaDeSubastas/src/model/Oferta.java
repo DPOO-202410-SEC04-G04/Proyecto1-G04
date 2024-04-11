@@ -19,7 +19,6 @@ public class Oferta {
 
     private float valorOfertado;
 
-    private Date fecha;
 
     //----------------------------------------------
     // CONSTRUCTOR
@@ -27,7 +26,6 @@ public class Oferta {
 
     public Oferta(float pValorOfertado){
         this.id = (UUID.randomUUID()).toString();
-        this.fecha = new Date();
         this.valorOfertado = pValorOfertado;
     }
 
