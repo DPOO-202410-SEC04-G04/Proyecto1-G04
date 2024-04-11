@@ -36,6 +36,7 @@ public class Escultura extends Pieza {
         
         super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.dimensiones = dimensiones;
+        
         this.materiales = materiales;
         this.peso = peso;
         this.necesitaElectricidad = necesitaElectricidad;
