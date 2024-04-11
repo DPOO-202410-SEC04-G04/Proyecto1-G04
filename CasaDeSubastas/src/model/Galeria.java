@@ -97,7 +97,7 @@ public class Galeria {
         Pieza pieza = new Pieza(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza);
         inventario.add(pieza);
         String linea = pieza.editarObras();
-        agregarlinea(".\\CasaDeSubastas\\src\\data\\ObrasdeArte.txt", linea);
+        agregarlinea(".\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
     }
 
     public void addUsuario(String tipoUsuario){
