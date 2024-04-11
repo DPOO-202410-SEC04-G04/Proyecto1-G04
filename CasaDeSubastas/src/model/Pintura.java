@@ -14,7 +14,7 @@ public class Pintura extends Pieza{
     // ATTRIBUTES
     //----------------------------------------------
 
-    private ArrayList<Float> dimensiones;
+    private String dimensiones;
 
     private float espacioDeMemoria;
 
@@ -24,12 +24,10 @@ public class Pintura extends Pieza{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pintura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, ArrayList<Float> dimensiones,
-    float espacioDeMemoria, String detallesAdicionales){
+    public Pintura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones, String detallesAdicionales){
         
         super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.dimensiones = dimensiones;
-        this.espacioDeMemoria = espacioDeMemoria;
         this.detallesAdicionales = detallesAdicionales;
         //TODO: Consturctor model.Video
     }
@@ -40,6 +38,12 @@ public class Pintura extends Pieza{
     //----------------------------------------------
     public String getTipoPieza(){
         return TIPO;
+    }
+
+    public String editarObrasPintura(){
+        String texto = "";
+        texto+="\n"+id+";"+autor+";"+titulo+";"+anio+";"+lugarDeCreacion+";"+estado+";"+String.valueOf(precio)+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza+";"+dimensiones+";"+detallesAdicionales;
+        return texto;
     }
 }
 
