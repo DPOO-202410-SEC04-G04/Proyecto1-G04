@@ -33,12 +33,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
 
-        while (opcion != 4) {
+        while (opcion != 9) {
             System.out.println("\nMenú Principal:");
             System.out.println("1. Registrar Pieza ");
             System.out.println("2. Confirmacion Venta o Devolucion de Pieza ");
-            System.out.println("3. Opción 3");
-            System.out.println("4. Salir");
+            System.out.println("3. Comprar Pieza ");
+			System.out.println("4. Realizar Subasta ");
+			System.out.println("5. Consultar Estado de mis Piezas ");
+			System.out.println("6. Consultar Historia de mis Piezas ");
+			System.out.println("7. Aumentar Limite de Compras ");
+			System.out.println("8. Realizar Pago ");
+            System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
 
             // Manejar la entrada del usuario
