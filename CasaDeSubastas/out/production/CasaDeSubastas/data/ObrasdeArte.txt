@@ -1,5 +1,0 @@
-1;Miguel Angel;El David;01/01/1500;Italia;Exhibida;100000.0;true;Efectivo;Escultura
-2;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;false;Efectivo;Pintura
-9c8da8ae-cc77-425b-9092-9d5e1b52e9c1;Juan Jose;Cali;03/07/2000;Colombia;Bodega;50000.0;true;transferencia electronica;video
-6ac44e96-589f-419e-8367-42478803bf09;d;d;2;d;d;2.0;false;d;d
-f697a1e7-3d8e-4706-a7bd-a04c69474900;Cantin;America de Cali;20/02/2020;Cali;exhibida;9999999.0;true;tarjeta de credito;escultura
