@@ -99,6 +99,7 @@ public class Galeria {
         String linea = pieza.editarObras();
         agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
     }
+    
 
     public void addUsuario(String tipoUsuario){
         Usuario usuarioNuevo = null;
