@@ -25,6 +25,12 @@ public class Administrador extends Usuario{
     // METHODS
     //----------------------------------------------
     
+    public static void cambiarValorMaximoCompras(Comprador comprador)
+    {
+    	float lim = comprador.getValorMaxCompra();
+    	comprador.setValorMaxCompra(lim*2);
+    }
+    
 
 
 }
