@@ -15,6 +15,8 @@ import model.Pagos;
 import model.Pieza;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,7 +47,7 @@ public class Main {
         while (opcion != 9) {
             System.out.println("\nMenú Principal:");
             System.out.println("1. Registrar Pieza ");
-            System.out.println("2. Confirmacion Venta o Devolucion de Pieza ");
+            System.out.println("2. Confirmar Disponibilidad de Obra ");
             System.out.println("3. Comprar Pieza ");
 			System.out.println("4. Realizar Subasta ");
 			System.out.println("5. Consultar Estado de mis Piezas ");
@@ -121,7 +123,6 @@ public class Main {
                     case 2:
                         System.out.println("Ejecutando opción 2...");
                         req2(args);
-                        ;
                         break;
                     case 3:
                         System.out.println("Ejecutando opción 3...");
@@ -257,8 +258,8 @@ public class Main {
     public static void req2(String[] args) throws FileNotFoundException, IOException {
 
         Galeria galeria = new Galeria("Uniandes");
-        String nombreObra = inputEnter("Digite el nombre de la Obra: ");
-        
+        String nombreObra = inputEnter("\nDigite el nombre de la Obra: ");
+        contarLineas(nombreObra);
     }
 
 
@@ -267,22 +268,35 @@ public class Main {
 
 
 
-    public int contarLineas() throws IOException 
+public static int contarLineas(String nombreObra) throws FileNotFoundException, IOException 
 { 
-	String archivo = ".\\p1-prueba\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
 
 	String linea = lector.readLine( ); 
+
+
 	
  	while( linea != null ) { 
 		contador++; 
-	 	linea = lector.readLine( );
+        if (linea.contains(nombreObra)){
+
+            String[] elementos=linea.split(";");
+            List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+
+            System.out.println("Disponibilidad: "+lista.get(7));
+            
+        }
+    
+	 	linea = lector.readLine( ); 
 	} 
 	 	lector.close( ); 
 		reader.close( ); 
 		return contador; 
+
+        
 }
 
 

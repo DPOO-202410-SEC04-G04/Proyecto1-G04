@@ -227,5 +227,5 @@ public class Galeria {
     public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
-    
+
 }
