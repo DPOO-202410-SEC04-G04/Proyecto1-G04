@@ -27,7 +27,7 @@ public class Pieza{
 
     protected float precio;
 
-    protected boolean disponibilidad;
+    protected String disponibilidad;
 
     protected String tipoCompra;
 
@@ -37,7 +37,7 @@ public class Pieza{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pieza(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza){
+    public Pieza(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza){
         this.id = UUID.randomUUID().toString();
         this.autor = pAutor;
         this.titulo = pTitulo;
@@ -111,11 +111,11 @@ public class Pieza{
         this.precio = precio;
     }
 
-    public boolean isDisponibilidad() {
+    public String isDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 

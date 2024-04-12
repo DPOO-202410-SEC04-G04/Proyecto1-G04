@@ -4,6 +4,7 @@ package view;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import model.Galeria;
@@ -108,10 +109,11 @@ public class Main {
                             }
                         }
                         break;
-                        //break;
+
                     case 2:
                         System.out.println("Ejecutando opción 2...");
-                        // Aquí puedes agregar la lógica específica para la opción 2
+                        req2(args);
+                        ;
                         break;
                     case 3:
                         System.out.println("Ejecutando opción 3...");
@@ -143,11 +145,11 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (true/false): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = inputEnter("Digite el tipo de pieza de la Obra: ");
 
-        galeria.addPieza(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), Boolean.parseBoolean(disponibilidad), tipoCompra, tipoPieza);
+        galeria.addPieza(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza);
     }
 
 	public static void req1Escultura(String[] args) throws FileNotFoundException, IOException {
@@ -160,7 +162,7 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (true/false): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Escultura";
 		String dimensiones = inputEnter("Digite las dimensiones (Formato: AltoxAnchoxProfundidad) de la Obra: ");
@@ -170,7 +172,7 @@ public class Main {
 		String tipoArte = inputEnter("Digite el tipo de Arte de la Obra: ");
 		String detallesAdicionales = inputEnter("Digite detalles adicionales: ");
 
-        galeria.addEscultura(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), Boolean.parseBoolean(disponibilidad), tipoCompra, tipoPieza, dimensiones, materiales, peso,
+        galeria.addEscultura(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza, dimensiones, materiales, peso,
 		Boolean.parseBoolean(necesidadElectricidad), tipoArte, detallesAdicionales);
     }
 
@@ -184,13 +186,13 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (true/false): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Pintura";
 		String dimensiones = inputEnter("Digite las dimensiones (Formato: AltoxAnchoxProfundidad) de la Obra: ");
 		String detallesAdicionales = inputEnter("Digite detalles adicionales: ");
 
-        galeria.addPintura(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), Boolean.parseBoolean(disponibilidad), tipoCompra, tipoPieza, dimensiones, detallesAdicionales);
+        galeria.addPintura(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza, dimensiones, detallesAdicionales);
     }
 
 
@@ -204,16 +206,56 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (true/false): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Video";
 		String duracion = inputEnter("Digite la duracion en segundos: ");
 		String espacioDeMemoria = inputEnter("Digite el espacio de memoria de la Obra (en MB): ");
 		String detallesAdicionales = inputEnter("Digite detalles adicionales: ");
 
-        galeria.addVideo(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), Boolean.parseBoolean(disponibilidad), tipoCompra, tipoPieza, Float.parseFloat(duracion), Float.parseFloat(espacioDeMemoria), detallesAdicionales);
+        galeria.addVideo(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza, Float.parseFloat(duracion), Float.parseFloat(espacioDeMemoria), detallesAdicionales);
     }
 
+
+
+
+
+
+
+
+
+
+
+    public static void req2(String[] args) throws FileNotFoundException, IOException {
+
+        Galeria galeria = new Galeria("Uniandes");
+        String nombreObra = inputEnter("Digite el nombre de la Obra: ");
+        
+    }
+
+
+
+
+
+
+
+    public int contarLineas() throws IOException 
+{ 
+	String archivo = ".\\p1-prueba\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    int contador = 0; 
+	FileReader reader = new FileReader( archivo );
+	BufferedReader lector = new BufferedReader( reader ); 
+
+	String linea = lector.readLine( ); 
+	
+ 	while( linea != null ) { 
+		contador++; 
+	 	linea = lector.readLine( );
+	} 
+	 	lector.close( ); 
+		reader.close( ); 
+		return contador; 
+}
 
 
 

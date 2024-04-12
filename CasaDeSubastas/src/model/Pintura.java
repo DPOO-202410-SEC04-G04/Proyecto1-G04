@@ -24,7 +24,7 @@ public class Pintura extends Pieza{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pintura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones, String detallesAdicionales){
+    public Pintura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones, String detallesAdicionales){
         
         super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
         this.dimensiones = dimensiones;

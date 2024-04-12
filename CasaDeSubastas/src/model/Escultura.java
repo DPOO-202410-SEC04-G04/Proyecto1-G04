@@ -31,7 +31,7 @@ public class Escultura extends Pieza {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Escultura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, boolean pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones,
+    public Escultura (String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones,
     String materiales, String peso, boolean necesitaElectricidad, String tipoArte, String detallesAdicionales){
         
         super(pAutor,  pTitulo,  pAnio,  pLugarDeCreacion,  pEstado,  pPrecio,  pDispoinibilidad,  pTipoCompra, tipoPieza);
