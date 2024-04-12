@@ -10,3 +10,4 @@ d259d3a0-b747-45fc-b33d-f214cbb5a28d;chica aupa;Aupa Athletic;14/08/2015;Bilbao;
 89a46715-f426-4461-9c3b-bac85b589682;Richard Drew;The Falling Man;04/02/2001;Estados Unidos;Bodega;9999999.0;false;Consignacion;Fotografia
 e08cf3a5-10b7-473d-9bb6-8bb9f9055866;Miguel Angel;El David;01/01/1500;Italia;Exhibida;4039953.0;true;Efectivo;Escultura;3x3x5;Marmol;7382;true;Moderna;Buena obra
 7f013754-1f12-4d67-a636-500bc2798399;Da vinci;La Mona Lisa;01/01/1200;Francia;exhibida;325243.0;false;Tranferencia electronica;Pintura;3x6x4;Muy fea obra
+3a82ccf9-f0e3-4542-9257-dbae9b8f336f;cantin autor;cantin obra de arte;07/07/1000;Cantin casa;Exhibido;5.0E8;Subastada;Efectivo;Pintura;10x10x2;Cantin es muy bello
