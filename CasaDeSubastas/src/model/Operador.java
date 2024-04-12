@@ -15,11 +15,10 @@ public class Operador extends Usuario {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Operador(){
-        super();
-        //TODO: Constructor model.Operador
+    public Operador(String nombre, String tipoUsuario, String id, String cel){
+        super(nombre, tipoUsuario, id, cel);
+        //TODO: Constructor cajero
     }
-
     //----------------------------------------------
     // METHODS
     //----------------------------------------------

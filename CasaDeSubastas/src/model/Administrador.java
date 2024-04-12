@@ -16,14 +16,21 @@ public class Administrador extends Usuario{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Administrador (){
-        super();
+    public Administrador (String nombre, String tipoUsuario, String id, String cel){
+        super(nombre, tipoUsuario, id, cel);
         //TODO: Constructor model.Administrador
     }
 
     //----------------------------------------------
     // METHODS
     //----------------------------------------------
+    
+    public static void cambiarValorMaximoCompras(Comprador comprador)
+    {
+    	float lim = comprador.getValorMaxCompra();
+    	comprador.setValorMaxCompra(lim*2);
+    }
+    
 
 
 }

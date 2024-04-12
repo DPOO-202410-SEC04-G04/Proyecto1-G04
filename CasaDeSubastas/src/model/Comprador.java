@@ -21,17 +21,13 @@ public class Comprador extends Usuario{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Comprador(float pValorMaxCompra, ArrayList<Pieza> pHistorialPiezas){
-        super();
+    public Comprador(String nombre, String tipoUsuario, String id, String cel, float pValorMaxCompra, ArrayList<Pieza> pHistorialPiezas){
+        super(nombre, tipoUsuario, id, cel);
         this.valorMaxCompra = pValorMaxCompra;
         this.historialPiezas = pHistorialPiezas;
     }
 
-    public Comprador(){
-        super();
-        this.valorMaxCompra = 0;
-        this.historialPiezas = new ArrayList<Pieza>();
-    }
+    
 
     //----------------------------------------------
     // METHODS
