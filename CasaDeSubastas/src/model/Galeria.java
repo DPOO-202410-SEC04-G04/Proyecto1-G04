@@ -53,7 +53,7 @@ public class Galeria {
      */
 
 
-     public void agregarlinea(String ruta, String texto){
+     public static void agregarlinea(String ruta, String texto){
         try {
             FileWriter fileWriter = new FileWriter(ruta, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
@@ -125,28 +125,33 @@ public class Galeria {
         agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
     }
     
-    public void addPago(String ID, float valorPago, String comprador, Pieza piezaComprada, String formaPago)
+    public static void addPago(String ID, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago)
     {
-    	
+    	Pagos pago = new Pagos(ID, valorPago, comprador, piezaComprada, formaPago);
+    	String linea = pago.lineaPagos();
+    	agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ListaPagos.txt", linea);
     }
     
 
-    public void addUsuario(String tipoUsuario){
+    public void addUsuario(String nombre, String tipoUsuario, String id, String cel){
         Usuario usuarioNuevo = null;
 
         switch (tipoUsuario) {
             case "Operador":
-                usuarioNuevo = new Operador();
+                usuarioNuevo = new Operador(nombre, tipoUsuario, id, cel);
                 break;
             case "Cajero":
-                usuarioNuevo = new Cajero();
+                usuarioNuevo = new Cajero(nombre, tipoUsuario, id, cel);
                 break;
             case "Empleado":
-                usuarioNuevo = new Empleado();
+                usuarioNuevo = new Empleado(nombre, tipoUsuario, id, cel);
                 break;
             case "Administrador":
-                usuarioNuevo = new Administrador();
+                usuarioNuevo = new Administrador(nombre, tipoUsuario, id, cel);
                 break;
+            case "Propietario":
+            	usuarioNuevo = new Propietario(nombre, tipoUsuario, id, cel);
+            	break;
             default:
                 throw new IllegalArgumentException("Unknown user type: " + usuarioNuevo);
         }

@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import model.Comprador;
 
 public class Pagos {
     //----------------------------------------------
@@ -85,6 +84,17 @@ public class Pagos {
     {
     	return this.formaPago;
     }
+    public void setFormaPago(String forma)
+    {
+    	this.formaPago = formaPago;
+    }
+    
+    public String lineaPagos()
+    {
+    	String texto = ";";
+    	texto+="\n"+id+";"+String.valueOf(valorPago)+";"+comprador.getNombre()+";"+piezaComprada.getTitulo()+";"+formaPago;
+    	return texto;
+    }
     
     public void realizarPago(Pagos pago)
     {
@@ -103,7 +113,7 @@ public class Pagos {
     	else
     	{
     		pago.comprador.setValorMaxCompra(suma+valorPieza);
-    		
+    		Cajero.registrarPago(pago);
     	}
     }
     

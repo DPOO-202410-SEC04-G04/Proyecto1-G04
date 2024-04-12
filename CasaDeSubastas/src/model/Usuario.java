@@ -22,7 +22,11 @@ public class Usuario {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Usuario(){
+    public Usuario(String nombre, String tipoUsuario, String id, String cel){
+    	this.nombre = nombre;
+    	this.tipoUsuario = tipoUsuario;
+    	this.id = id;
+    	this.cel = cel;
         //TODO: Constructor model.Usuario
     }
 

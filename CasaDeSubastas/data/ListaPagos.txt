@@ -1,1 +1,1 @@
-00001;10000;Luna;Efectivo
+52802;25000.0;Angel;La pintura;Transferencia electronica

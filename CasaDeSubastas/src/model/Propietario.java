@@ -17,9 +17,9 @@ public class Propietario extends Usuario{
     //----------------------------------------------
 
 
-    public Propietario(){
-        super();
-        //TODO: Constructor model.Propietario
+    public Propietario(String nombre, String tipoUsuario, String id, String cel){
+        super(nombre, tipoUsuario, id, cel);
+        //TODO: Constructor cajero
     }
 
 
