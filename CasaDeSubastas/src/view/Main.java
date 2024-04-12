@@ -137,12 +137,12 @@ public class Main {
                     	break;
                     case 8:
                     	Random random = new Random();
-                    	int num = random.nextInt(10000, 100000);
+                    	int num = random.nextInt(10000);
                     	String id = String.valueOf(num);
                     	float valorPago = 25000;
                     	ArrayList<Pieza> lista = new ArrayList<>();
                     	Comprador comprador = new Comprador("Angel", "Comprador", "C111", "3091723678", 100000, lista);
-                    	Pieza pieza = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, false, "Transferencia electronica", "Pintura");
+                    	Pieza pieza = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
                     	pago.realizarPago(pago);
                     	System.out.println("Pago realizado exitosamente");
