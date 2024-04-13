@@ -101,18 +101,14 @@ public class Pagos {
     	float limite = pago.comprador.getValorMaxCompra();
     	ArrayList<Pieza> lista = pago.comprador.getHistorialPiezas();
     	float valorPieza = pago.piezaComprada.getPrecio();
-    	float suma = 0;
-    	for(Pieza pieza : lista)
-    	{
-    		suma += pieza.getPrecio();
-    	}
-    	if((suma+valorPieza)>limite)
+    	float valorActual = pago.comprador.getTotalCompras();
+    	if((valorActual+valorPieza)>limite)
     	{
     		System.out.println("El valor de la compra excede el limite permitido");
     	}
     	else
     	{
-    		pago.comprador.setValorMaxCompra(suma+valorPieza);
+    		pago.comprador.añadirPiezaHistorial(pago.piezaComprada);;
     		Cajero.registrarPago(pago);
     	}
     }

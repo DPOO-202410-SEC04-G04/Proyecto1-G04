@@ -38,6 +38,18 @@ public class Comprador extends Usuario{
     	return this.valorMaxCompra;
     }
     
+    public float getTotalCompras()
+    {
+    	ArrayList<Pieza> lista =this.historialPiezas ;
+    	float suma = 0;
+    	for(Pieza pieza: lista)
+    	{
+    		float precioPieza = pieza.getPrecio();
+    		suma+=precioPieza;
+    	}
+    	return suma;
+    }
+    
     public ArrayList<Pieza> getHistorialPiezas()
     {
     	return this.historialPiezas;
