@@ -112,7 +112,7 @@ public class Pieza{
     }
 
     public String isDisponibilidad() {
-        return disponibilidad;
+        return this.disponibilidad;
     }
 
     public void setDisponibilidad(String disponibilidad) {
@@ -125,6 +125,16 @@ public class Pieza{
 
     public void setTipoCompra(String tipoCompra) {
         this.tipoCompra = tipoCompra;
+    }
+    
+    public String getTipoPieza() 
+    {
+    	return this.tipoPieza;
+    }
+    
+    public void setTipoPieza(String tipoPieza)
+    {
+    	this.tipoPieza = tipoPieza;
     }
 
     public String editarObras(){

@@ -129,8 +129,8 @@ public class Main {
                         // Aquí puedes agregar la lógica específica para la opción 3
                         break;
                     case 7:
-                    	ArrayList<Pieza> listap = new ArrayList<>();
-                    	Comprador compradorp = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, listap);
+                    	Pieza piezap = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
+                    	Comprador compradorp = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap);
                     	Administrador.cambiarValorMaximoCompras(compradorp);
                     	String nombre = compradorp.getNombre();
                     	float limite = compradorp.getValorMaxCompra();
@@ -141,9 +141,8 @@ public class Main {
                     	int num = random.nextInt(10000);
                     	String id = String.valueOf(num);
                     	float valorPago = 25000;
-                    	ArrayList<Pieza> lista = new ArrayList<>();
-                    	Comprador comprador = new Comprador("Angel", "Comprador", "C111", "3091723678", 100000, lista);
                     	Pieza pieza = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
+                    	Comprador comprador = new Comprador("Angel", "Comprador", "C111", "3091723678", 100000, pieza);
                     	Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
                     	pago.realizarPago(pago);
                     	System.out.println("Pago realizado exitosamente");

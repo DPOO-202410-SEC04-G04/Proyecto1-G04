@@ -1,0 +1,1 @@
+1234567;Leonardo da Vinci;Monalisa;30/12/1345;Italia;Exhibido;20000;Subastada;Efectivo;Pintura;false

@@ -15,16 +15,16 @@ public class Comprador extends Usuario{
 
     private float valorMaxCompra;
 
-    private ArrayList<Pieza> historialPiezas;
+    private Pieza piezaComprada;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Comprador(String nombre, String tipoUsuario, String id, String cel, float pValorMaxCompra, ArrayList<Pieza> pHistorialPiezas){
+    public Comprador(String nombre, String tipoUsuario, String id, String cel, float pValorMaxCompra, Pieza pieza){
         super(nombre, tipoUsuario, id, cel);
         this.valorMaxCompra = pValorMaxCompra;
-        this.historialPiezas = pHistorialPiezas;
+        this.piezaComprada = pieza;
     }
 
     
@@ -38,9 +38,14 @@ public class Comprador extends Usuario{
     	return this.valorMaxCompra;
     }
     
+    public ArrayList<Pieza> leerHistorial()
+    {
+    	
+    }
+    
     public float getTotalCompras()
     {
-    	ArrayList<Pieza> lista =this.historialPiezas ;
+    	ArrayList<Pieza> lista = leerHistorial();
     	float suma = 0;
     	for(Pieza pieza: lista)
     	{
@@ -50,9 +55,9 @@ public class Comprador extends Usuario{
     	return suma;
     }
     
-    public ArrayList<Pieza> getHistorialPiezas()
+    public Pieza getPiezaComprada()
     {
-    	return this.historialPiezas;
+    	return this.piezaComprada;
     }
     
     public void setValorMaxCompra(float valor)
@@ -60,9 +65,29 @@ public class Comprador extends Usuario{
     	this.valorMaxCompra = valor;
     }
     
+    public void setPiezaComprada(Pieza pieza)
+    {
+    	this.piezaComprada = pieza;
+    }
+    
     public void añadirPiezaHistorial(Pieza pieza)
     {
-    	historialPiezas.add(pieza);
+    	
+    }
+    
+    public String lineaComprador(Pieza pieza)
+    {
+    	String texto = "";
+    	String id = pieza.getId();
+    	String autor = pieza.getAutor();
+    	String titulo = pieza.getTitulo();
+    	String anio = pieza.getAnio();
+    	String lugar = pieza.getLugarDeCreacion();
+    	String estado = pieza.getEstado();
+    	String precio = String.valueOf(pieza.getPrecio());
+    	String disponibilidad = pieza.isDisponibilidad();
+    	String tipoCompra = pieza.getTipoCompra();
+    	String tipoPieza = pieza.getTipoPieza();
     }
 
     public void realizarCompraPrecioFijo(String idCompraDirecta, float valorOfertado){

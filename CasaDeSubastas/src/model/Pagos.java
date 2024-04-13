@@ -99,7 +99,6 @@ public class Pagos {
     public void realizarPago(Pagos pago)
     {
     	float limite = pago.comprador.getValorMaxCompra();
-    	ArrayList<Pieza> lista = pago.comprador.getHistorialPiezas();
     	float valorPieza = pago.piezaComprada.getPrecio();
     	float valorActual = pago.comprador.getTotalCompras();
     	if((valorActual+valorPieza)>limite)
