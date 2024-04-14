@@ -1,5 +1,7 @@
 package model;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Pagos {
@@ -92,22 +94,24 @@ public class Pagos {
     public String lineaPagos()
     {
     	String texto = ";";
-    	texto+="\n"+id+";"+String.valueOf(valorPago)+";"+comprador.getNombre()+";"+piezaComprada.getTitulo()+";"+formaPago;
+    	texto+="\n"+this.id+";"+String.valueOf(this.valorPago)+";"+this.comprador.getNombre()+";"+this.piezaComprada.getTitulo()+";"+this.formaPago;
     	return texto;
     }
     
-    public void realizarPago(Pagos pago)
+    public void realizarPago(Pagos pago) throws FileNotFoundException, IOException
     {
+    	
     	float limite = pago.comprador.getValorMaxCompra();
     	float valorPieza = pago.piezaComprada.getPrecio();
     	float valorActual = pago.comprador.getTotalCompras();
+    	
     	if((valorActual+valorPieza)>limite)
     	{
     		System.out.println("El valor de la compra excede el limite permitido");
     	}
     	else
     	{
-    		pago.comprador.añadirPiezaHistorial(pago.piezaComprada);;
+    		pago.comprador.añadirPiezaHistorial(pago.getComprador());;
     		Cajero.registrarPago(pago);
     	}
     }

@@ -51,7 +51,7 @@ public class Main {
             System.out.println("3. Comprar Pieza ");
 			System.out.println("4. Realizar Subasta ");
 			System.out.println("5. Consultar Estado de mis Piezas ");
-			System.out.println("6. Consultar Historia de mis Piezas ");
+			System.out.println("6. Consultar Historial de mis Piezas ");
 			System.out.println("7. Aumentar Limite de Compras ");
 			System.out.println("8. Realizar Pago ");
             System.out.println("9. Salir");
@@ -128,6 +128,39 @@ public class Main {
                         System.out.println("Ejecutando opción 3...");
                         // Aquí puedes agregar la lógica específica para la opción 3
                         break;
+                    case 5:
+                    	Pieza piezap1 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
+                    	Comprador compradorp1 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap1);
+                    	ArrayList<String[]> list = new ArrayList();
+                    	list = compradorp1.estadoPiezas();
+                    	for(String[] linea: list)
+                    	{
+                    		System.out.println("Pieza: "+linea[2]);
+                    		System.out.println("Estado: "+linea[5]);
+                    	}
+                    	break;
+                    case 6:
+                    	Pieza piezap2 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
+                    	Comprador compradorp2 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap2);
+                    	ArrayList<String[]> l = new ArrayList();
+                    	l = compradorp2.historialCompleto();
+                    	System.out.println("Historial Piezas de "+compradorp2.getNombre());
+                    	for(String[] linea: l)
+                    	{
+                    		System.out.println("------------------------------------------------------------------");
+                    		System.out.println("ID: "+linea[0]);
+                    		System.out.println("Autor: "+linea[1]);
+                    		System.out.println("Pieza: "+linea[2]);
+                    		System.out.println("Fecha: "+linea[3]);
+                    		System.out.println("Lugar de creacion: "+linea[4]);
+                    		System.out.println("Estado: "+linea[5]);
+                    		System.out.println("Precio: "+linea[6]);
+                    		System.out.println("Disponibilidad: "+linea[7]);
+                    		System.out.println("Metodo de pago: "+linea[8]);
+                    		System.out.println("Tipo de pieza: "+linea[9]);
+                    		System.out.println("Propietario de la pieza: "+linea[10]);
+                    	}
+                    	break;
                     case 7:
                     	Pieza piezap = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Comprador compradorp = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap);
@@ -141,7 +174,7 @@ public class Main {
                     	int num = random.nextInt(10000);
                     	String id = String.valueOf(num);
                     	float valorPago = 25000;
-                    	Pieza pieza = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
+                    	Pieza pieza = new Pieza("Raul", "Cristiano", "01/07/1272", "Colombia", "Exhibida", 25000, "Vendida", "Transferencia electronica", "Pintura");
                     	Comprador comprador = new Comprador("Angel", "Comprador", "C111", "3091723678", 100000, pieza);
                     	Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
                     	pago.realizarPago(pago);
@@ -171,10 +204,10 @@ public class Main {
         String autorObra = inputEnter("Digite el autor de la Obra: ");
         String fecha = inputEnter("Digite la fecha de la Obra (dd/mm/YYYY): ");
         String lugar = inputEnter("Digite el lugar de la Obra: ");
-        String estado = inputEnter("Digite el estado de la Obra: ");
+        String estado = inputEnter("Digite el estado de la Obra (Bodega/Exhibida): ");
         String precio = inputEnter("Digite el precio de la Obra: ");
         String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
-        String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
+        String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra (Efectivo/Transferencia electronica/Tarjeta de credito: ");
         String tipoPieza = inputEnter("Digite el tipo de pieza de la Obra: ");
 
         galeria.addPieza(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza);

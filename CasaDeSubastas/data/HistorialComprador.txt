@@ -1,1 +1,3 @@
-1234567;Leonardo da Vinci;Monalisa;30/12/1345;Italia;Exhibido;20000;Subastada;Efectivo;Pintura;false
+1234567;Leonardo da Vinci;Monalisa;30/12/1345;Italia;Exhibido;20000;Vendida;Efectivo;Pintura;false
+3ec65c06-3d71-4611-b251-3218d5ea80b8;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
+68330504-84f0-43d0-a642-36f53720eb4f;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true

@@ -1,5 +1,9 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Comprador extends Usuario{
@@ -38,15 +42,77 @@ public class Comprador extends Usuario{
     	return this.valorMaxCompra;
     }
     
-    public ArrayList<Pieza> leerHistorial()
+    public ArrayList<String[]> estadoPiezas() throws FileNotFoundException, IOException
     {
+    	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
+    	FileReader reader = new FileReader( archivo );
+    	BufferedReader lector = new BufferedReader( reader ); 
+    	ArrayList<String[]> lista = new ArrayList();
+
+    	String linea = lector.readLine( );
+    	while(linea!=null)
+    	{
+    		String partes[] = linea.split(";");
+    		if(partes[10].equals("true"))
+    			lista.add(partes);
+    		linea = lector.readLine( );
+    	}
+    	
+    	lector.close( ); 
+		reader.close( ); 
+		return lista;
     	
     }
     
-    public float getTotalCompras()
+    public ArrayList<String[]> historialCompleto() throws FileNotFoundException, IOException
+    {
+    	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
+    	FileReader reader = new FileReader( archivo );
+    	BufferedReader lector = new BufferedReader( reader ); 
+    	ArrayList<String[]> lista = new ArrayList();
+
+    	String linea = lector.readLine( );
+    	while(linea!=null)
+    	{
+    		String partes[] = linea.split(";");
+    		lista.add(partes);
+    		linea = lector.readLine( );
+    	}
+    	
+    	lector.close( ); 
+		reader.close( ); 
+		return lista;
+    	
+    }
+    
+    public ArrayList<Pieza> leerHistorial() throws FileNotFoundException, IOException
+    {
+    	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
+    	FileReader reader = new FileReader( archivo );
+    	BufferedReader lector = new BufferedReader( reader ); 
+
+    	String linea = lector.readLine( );
+    	
+    	ArrayList<Pieza> lista = new ArrayList();
+    	
+    	while(linea!=null)
+    	{
+    		String partes[] = linea.split(";");
+    		Pieza pieza = new Pieza(partes[1], partes[2], partes[3], partes[4], partes[5], Float.parseFloat(partes[6]), partes[7], partes[8], partes[9]);
+    		pieza.setId(partes[0]);
+    		lista.add(pieza);
+    		linea = lector.readLine( );
+    	}
+    	lector.close( ); 
+		reader.close( ); 
+    	return lista;
+    }
+    
+    public float getTotalCompras() throws FileNotFoundException, IOException
     {
     	ArrayList<Pieza> lista = leerHistorial();
     	float suma = 0;
+    	
     	for(Pieza pieza: lista)
     	{
     		float precioPieza = pieza.getPrecio();
@@ -70,13 +136,14 @@ public class Comprador extends Usuario{
     	this.piezaComprada = pieza;
     }
     
-    public void añadirPiezaHistorial(Pieza pieza)
+    public void añadirPiezaHistorial(Comprador comprador)
     {
-    	
+    	Galeria.addObraHistorial(comprador);
     }
     
-    public String lineaComprador(Pieza pieza)
+    public String lineaComprador(Comprador comprador)
     {
+    	Pieza pieza = comprador.piezaComprada;
     	String texto = "";
     	String id = pieza.getId();
     	String autor = pieza.getAutor();
@@ -88,6 +155,13 @@ public class Comprador extends Usuario{
     	String disponibilidad = pieza.isDisponibilidad();
     	String tipoCompra = pieza.getTipoCompra();
     	String tipoPieza = pieza.getTipoPieza();
+    	boolean esPropiedad = false;
+    	if(disponibilidad.equals("Vendida"))
+    	{
+    		esPropiedad = true;
+    	}
+    	texto+="\n"+id+";"+autor+";"+titulo+";"+anio+";"+lugar+";"+estado+";"+precio+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza+";"+String.valueOf(esPropiedad);
+    	return texto;
     }
 
     public void realizarCompraPrecioFijo(String idCompraDirecta, float valorOfertado){

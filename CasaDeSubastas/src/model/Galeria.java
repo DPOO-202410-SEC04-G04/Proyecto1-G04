@@ -125,11 +125,16 @@ public class Galeria {
         agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
     }
     
-    public static void addPago(String ID, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago)
+    public static void addPago(Pagos pago)
     {
-    	Pagos pago = new Pagos(ID, valorPago, comprador, piezaComprada, formaPago);
     	String linea = pago.lineaPagos();
     	agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ListaPagos.txt", linea);
+    }
+    
+    public static void addObraHistorial(Comprador comprador)
+    {
+    	String linea = comprador.lineaComprador(comprador);
+    	agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt", linea);
     }
     
 

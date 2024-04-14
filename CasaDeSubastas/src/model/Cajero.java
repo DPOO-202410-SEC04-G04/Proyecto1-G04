@@ -28,11 +28,6 @@ public class Cajero extends Usuario{
     
     public static void registrarPago(Pagos pago)
     {
-    	String id = pago.getID();
-    	float valor = pago.getValorPago();
-    	Comprador comprador = pago.getComprador();
-    	Pieza pieza = pago.getPiezaComprada();
-    	String forma = pago.getFormaPago();
-    	Galeria.addPago(id, valor, comprador, pieza, forma);
+    	Galeria.addPago(pago);
     }
 }
