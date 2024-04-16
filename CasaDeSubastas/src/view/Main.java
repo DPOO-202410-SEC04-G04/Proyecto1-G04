@@ -351,7 +351,8 @@ public class Main {
 
 public static int contarLineas(String nombreObra) throws FileNotFoundException, IOException 
 { 
-	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    String archivo = ".\\data\\ObrasdeArte.txt";
+	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
@@ -383,7 +384,9 @@ public static int contarLineas(String nombreObra) throws FileNotFoundException, 
 
 
 public static int contarLineasNombre(String nombreObra) throws IOException {
-    String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+
+    String archivo = ".\\data\\ObrasdeArte.txt";
+    //String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     List<String> lineas = new ArrayList<>();
     int contador = 0;
 
@@ -432,7 +435,8 @@ public static int contarLineasNombre(String nombreObra) throws IOException {
 
 public static int contarSubastas() throws FileNotFoundException, IOException 
 { 
-	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+	String archivo = ".\\data\\ObrasdeArte.txt";
+	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 

@@ -13,3 +13,4 @@ bbbb9195-c710-44f3-8381-7c2bbde75fb3;Yo;Agua;01/01/2017;Cali;Bodega;45.0;Disponi
 7d487f1e-33a7-4b68-af71-d6ef9b282644;David Castro;Ojo raro;04/05/1994;Honduras;Exhibido;80.0;Disponible;Transferencia electronica;Video;89.0;5.0;Perfecto estado
 024eedf2-6b29-4d88-83cc-fb4b6b27cd6a;Van Gogh;La noche Estrellada;01/01/1889;Inglaterra;Exhibido;902.0;Subastada;Efectivo;Pintura;2x5x3;La obra mas linda
 4cf5e1b8-8a53-4d99-ae71-7e0eaa44ac5a;brasilero;Cristo Redentor;01/01/1000;Rio de Janeiro;Bodega;9000.0;Subastada;Tarjeta de Credito;Escultura;100x100x100;Marmol;100000;false;Cubismo;Lindo 
+0fc6405c-d371-4fb6-83c4-0d2b61318912;Luna;lunera cascabelera;02/02/2024;Haiti;Exhibida;10000.0;Vendida;Tarjeta de credito;Musica
