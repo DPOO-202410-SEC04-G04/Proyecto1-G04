@@ -98,7 +98,7 @@ public class Pagos {
     	return texto;
     }
     
-    public void realizarPago(Pagos pago) throws FileNotFoundException, IOException
+    public static void realizarPago(Pagos pago) throws FileNotFoundException, IOException
     {
     	
     	float limite = pago.comprador.getValorMaxCompra();
@@ -113,6 +113,7 @@ public class Pagos {
     	{
     		pago.comprador.añadirPiezaHistorial(pago.getComprador());;
     		Cajero.registrarPago(pago);
+    		System.out.println("Pago realizado exitosamente");
     	}
     }
     

@@ -3,8 +3,10 @@ package view;
 
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -49,7 +51,6 @@ public class Main {
             System.out.println("1. Registrar Pieza ");
             System.out.println("2. Confirmar Disponibilidad de Obra ");
             System.out.println("3. Comprar Pieza ");
-			System.out.println("4. Realizar Subasta ");
 			System.out.println("5. Consultar Estado de mis Piezas ");
 			System.out.println("6. Consultar Historial de mis Piezas ");
 			System.out.println("7. Aumentar Limite de Compras ");
@@ -115,7 +116,7 @@ public class Main {
                                 }
                             } else {
                                 System.out.println("Por favor, introduzca un número válido.");
-                                scanner.next(); // Evitar bucle infinito por entrada incorrecta
+                                scanner.next(); 
                             }
                         }
                         break;
@@ -126,8 +127,50 @@ public class Main {
                         break;
                     case 3:
                         System.out.println("Ejecutando opción 3...");
-                        // Aquí puedes agregar la lógica específica para la opción 3
+                        req3(args);
+                        int opcionSubmenu2 = 0;
+                        while (opcionSubmenu2 != 3) {
+                            System.out.println("\nSeleccione metodo de compra de Pieza:");
+                            System.out.println("1. Pagar Valor total");
+                            System.out.println("2. Por Subasta");
+							System.out.println("3. Volver al Menú Principal");
+                            System.out.print("Seleccione una opción del submenú: ");
+                            
+                            if (scanner.hasNextInt()) {
+                                opcionSubmenu2 = scanner.nextInt();
+                                
+                                switch (opcionSubmenu2) {
+                                    case 1:
+                                        System.out.println("Ejecutando Subopción 1...");
+                                        
+                                        req31(args);
+                                        break;
+
+
+                                    case 2:
+                                        System.out.println("Ejecutando Subopción 2...");
+                                        String nombre = inputEnter("\nIngrese el nombre de la obra: ");
+                                        Comprador.realizarOfertaSubasta(nombre);
+                                        
+                                        break;
+									
+									case 3:
+                                        System.out.println("Volviendo al Menú Principal...");
+                                        break;
+
+									
+                                    default:
+                                        System.out.println("Opción no válida, intente nuevamente.");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Por favor, introduzca un número válido.");
+                                scanner.next();
+                            }
+                        }
                         break;
+                        
+                        
                     case 5:
                     	Pieza piezap1 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Comprador compradorp1 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap1);
@@ -175,10 +218,9 @@ public class Main {
                     	String id = String.valueOf(num);
                     	float valorPago = 25000;
                     	Pieza pieza = new Pieza("Raul", "Cristiano", "01/07/1272", "Colombia", "Exhibida", 25000, "Vendida", "Transferencia electronica", "Pintura");
-                    	Comprador comprador = new Comprador("Angel", "Comprador", "C111", "3091723678", 100000, pieza);
+                    	Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, pieza);
                     	Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
-                    	pago.realizarPago(pago);
-                    	System.out.println("Pago realizado exitosamente");
+                    	Pagos.realizarPago(pago);
                     	break;
                     case 9:
                         System.out.println("Saliendo del menú...");
@@ -206,9 +248,10 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra (Bodega/Exhibida): ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada/Disponible): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra (Efectivo/Transferencia electronica/Tarjeta de credito: ");
         String tipoPieza = inputEnter("Digite el tipo de pieza de la Obra: ");
+
 
         galeria.addPieza(autorObra, nombreObra, fecha, lugar, estado, Float.parseFloat(precio), disponibilidad, tipoCompra, tipoPieza);
     }
@@ -223,7 +266,7 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada/Disponible): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Escultura";
 		String dimensiones = inputEnter("Digite las dimensiones (Formato: AltoxAnchoxProfundidad) de la Obra: ");
@@ -247,7 +290,7 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada/Disponible): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Pintura";
 		String dimensiones = inputEnter("Digite las dimensiones (Formato: AltoxAnchoxProfundidad) de la Obra: ");
@@ -267,7 +310,7 @@ public class Main {
         String lugar = inputEnter("Digite el lugar de la Obra: ");
         String estado = inputEnter("Digite el estado de la Obra: ");
         String precio = inputEnter("Digite el precio de la Obra: ");
-        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada): ");
+        String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada/Disponible): ");
         String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
         String tipoPieza = "Video";
 		String duracion = inputEnter("Digite la duracion en segundos: ");
@@ -289,13 +332,19 @@ public class Main {
 
     public static void req2(String[] args) throws FileNotFoundException, IOException {
 
-        Galeria galeria = new Galeria("Uniandes");
         String nombreObra = inputEnter("\nDigite el nombre de la Obra: ");
         contarLineas(nombreObra);
     }
 
+    public static void req3(String[] args) throws FileNotFoundException, IOException {
+        contarSubastas();
+    }
 
 
+    public static void req31(String[] args) throws FileNotFoundException, IOException {
+    	String nombreObra = inputEnter("\nDigite el nombre de la Obra: ");
+        contarLineasNombre(nombreObra);
+    }
 
 
 
@@ -328,9 +377,88 @@ public static int contarLineas(String nombreObra) throws FileNotFoundException, 
 		reader.close( ); 
 		return contador; 
 
-        
 }
 
+
+
+
+public static int contarLineasNombre(String nombreObra) throws IOException {
+    String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    List<String> lineas = new ArrayList<>();
+    int contador = 0;
+
+    try (BufferedReader lector = new BufferedReader(new FileReader(archivo))) {
+        String linea;
+
+        while ((linea = lector.readLine()) != null) {
+            if (linea.contains(nombreObra)) {
+                String[] elementos = linea.split(";");
+                List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+                Pieza pieza = new Pieza(lista.get(1), lista.get(2), lista.get(3), lista.get(4), lista.get(5), Float.parseFloat(lista.get(6)), lista.get(7), lista.get(8), lista.get(9));;
+                if (!lista.get(7).equals("Vendida") && !lista.get(7).equals("Devuelta")) {
+                    lista.set(7, "Vendida");
+                    linea = String.join(";", lista);
+
+
+                    Random random = new Random();
+                    int num = random.nextInt(10000);
+                    String id = String.valueOf(num);
+                    float valorPago = 25000;
+
+                    Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, pieza);
+                    Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
+
+                    Pagos.realizarPago(pago);
+
+                }
+            }
+            lineas.add(linea);
+            contador++;
+        }
+    }
+
+
+    try (BufferedWriter escritor = new BufferedWriter(new FileWriter(archivo))) {
+        for (String linea : lineas) {
+            escritor.write(linea);
+            escritor.newLine();
+        }
+    }
+
+    return contador;
+}
+
+
+
+public static int contarSubastas() throws FileNotFoundException, IOException 
+{ 
+	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    int contador = 0; 
+	FileReader reader = new FileReader( archivo );
+	BufferedReader lector = new BufferedReader( reader ); 
+
+	String linea = lector.readLine( ); 
+
+
+	
+ 	while( linea != null ) { 
+		contador++; 
+        if (linea.contains("Subastada") || linea.contains("Disponible")){
+
+            String[] elementos=linea.split(";");
+            List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+
+            System.out.println(lista);
+            
+        }
+    
+	 	linea = lector.readLine( ); 
+	} 
+	 	lector.close( ); 
+		reader.close( ); 
+		return contador; 
+
+}
 
 
 

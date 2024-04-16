@@ -1,10 +1,15 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class Comprador extends Usuario{
 
@@ -164,7 +169,7 @@ public class Comprador extends Usuario{
     	return texto;
     }
 
-    public void realizarCompraPrecioFijo(String idCompraDirecta, float valorOfertado){
+    public void realizarCompraPrecioFijo(String nombreComprador, float valorOfertado){
         /*
         un usuario registrado como comprador en la plataforma podrá
         ofrecerse a realizar la compra.
@@ -178,7 +183,7 @@ public class Comprador extends Usuario{
 
 
         //Crear oferta
-        Oferta ofertaCompraPrecioFijo = new Oferta(valorOfertado);
+        Oferta ofertaCompraPrecioFijo = new Oferta(nombreComprador, valorOfertado);
 
         //Asignar oferta a compra directa
 
@@ -188,8 +193,100 @@ public class Comprador extends Usuario{
 
     }
 
-    public void realizarOfertaSubasta(){
+    public static void realizarOfertaSubasta(String pieza) throws FileNotFoundException, IOException{
+    	String a = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    	FileReader leer = new FileReader( a );
+    	BufferedReader lector1 = new BufferedReader( leer ); 
 
+    	String linea1 = lector1.readLine( );
+    	List<String> lista1 = new ArrayList();
+    	while( linea1 != null ) { 
+            if (linea1.contains(pieza)){
+
+                String[] elementos=linea1.split(";");
+                lista1 = new ArrayList<>(Arrays.asList(elementos));
+            }
+        
+    	 	linea1 = lector1.readLine( ); 
+    	} 
+    	 	lector1.close( ); 
+    		leer.close( ); 
+    	float precio = Float.parseFloat(lista1.get(6));
+    	float valorInicial = precio/2;
+    	float valorMinimo = (float) (precio*0.75);
+    	String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialOfertas.txt";
+    	
+    	FileReader reader = new FileReader( archivo );
+    	BufferedReader lector = new BufferedReader( reader ); 
+
+    	String linea = lector.readLine( ); 
+    	float ofertaActual = 0;
+    	
+    	while(linea!=null)
+    	{
+    		String[] lista = linea.split(";");
+    		float monto = Float.parseFloat(lista[2]);
+    		if(monto >= valorInicial && monto > ofertaActual)
+    		{
+    			ofertaActual = monto;
+    		}
+    		linea=lector.readLine();
+    	}
+    	lector.close();
+    	reader.close();
+    	if(ofertaActual < valorMinimo)
+    	{
+    		System.out.println("No se puede vender la obra ya que la oferta no alcanza el valor minimo para vender la obra");
+    	}
+    	else
+    	{
+    		String arch = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    		List<String> lineas = new ArrayList<>();
+    		try (BufferedReader lec = new BufferedReader(new FileReader(arch))) {
+    	        String lin;
+
+    	        while ((lin = lec.readLine()) != null) {
+    	            if (lin.contains(pieza)) {
+    	                String[] elementos = lin.split(";");
+    	                List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+    	                Pieza piez = new Pieza(lista.get(1), lista.get(2), lista.get(3), lista.get(4), lista.get(5), Float.parseFloat(lista.get(6)), lista.get(7), lista.get(8), lista.get(9));;
+    	                if (lista.get(7).equals("Subastada")) {
+    	                    lista.set(7, "Vendida");
+    	                    lin = String.join(";", lista);
+
+
+    	                    Random random = new Random();
+    	                    int num = random.nextInt(10000);
+    	                    String id = String.valueOf(num);
+    	                    float valorPago = 25000;
+
+    	                    Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, piez);
+    	                    Pagos pago = new Pagos(id, valorPago, comprador, piez, "Transferencia electronica");
+
+    	                    Pagos.realizarPago(pago);
+    	                    System.out.println("Subasta completada exitosamente");
+
+    	                }
+    	                else
+    	                {
+    	                	System.out.println("La pieza no está disponible para subastarla");
+    	                	break;
+    	                }
+    	            }
+    	            lineas.add(lin);
+    	        }
+    	    }
+
+
+    	    try (BufferedWriter escritor = new BufferedWriter(new FileWriter(arch))) {
+    	        for (String l : lineas) {
+    	            escritor.write(l);
+    	            escritor.newLine();
+    	        }
+
+    	}
+    	}
+    	
     }
     
     

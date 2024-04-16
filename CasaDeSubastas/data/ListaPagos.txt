@@ -1,3 +1,4 @@
-52802;25000.0;Angel;La pintura;Transferencia electronica;;
-9743;25000.0;Angel;Cristiano;Transferencia electronica;
-3525;25000.0;Angel;Cristiano;Transferencia electronica
+552802;25000.0;Angel;La pintura;Transferencia electronica
+9743;25000.0;Angel;Cristiano;Transferencia electronica
+3525;25000.0;Angel;Cristiano;Transferencia electronica;
+9589;25000.0;Manuel;Cristiano;Transferencia electronica

@@ -172,8 +172,8 @@ public class Galeria {
             if(compraDirecta.getId().equals(pIdComprasDirectas)){
                 if(pUsuario.getTipoUsuario().equals("Comprador") && checkCompradorNotPropietario(compraDirecta.getPieza().getId(),pUsuario)){
 
-                    Oferta oferta = new Oferta(compraDirecta.getValor());
-                    compraDirecta.realizarOferta(oferta);
+                    //Oferta oferta = new Oferta(compraDirecta.getValor());
+                    //compraDirecta.realizarOferta(oferta);
 
 
                 }

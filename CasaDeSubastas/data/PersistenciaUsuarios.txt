@@ -1,3 +1,4 @@
 Juan_Perez;1;3154527831;Administrador
 Nicolas_Hurtado;2;3163074758;Propietario
 David_Garcia;3;3145689021;Operador
+Manuel;3211913008;Comprador
