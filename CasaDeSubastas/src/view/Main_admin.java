@@ -63,7 +63,7 @@ public class Main_admin {
 
 public static int contarUsuarios(String usuario, String contrasena) throws FileNotFoundException, IOException 
 { 
-    String archivo = ".\\data\\PersistenciaAdmins.txt";
+    String archivo = "C:\\Users\\david\\Downloads\\DPOO-PROY2\\Proyecto1-G04\\CasaDeSubastas\\data\\PersistenciaAdmins.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
@@ -78,7 +78,9 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
             System.out.println("Se registro con exito");
             System.out.println("\nQue desea hacer?");
-            mostrarMenuAdmin(null);
+            while (true){
+                mostrarMenuAdmin(null);
+            }
             
         }
         else{
@@ -100,7 +102,8 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
         System.out.println("1. Registrar Pieza");
         System.out.println("2. Aumentar Limite de compras");
         System.out.println("3. Ver historia comprador");
-        System.out.println("4. Salir");
+        System.out.println("4. Consultar historia de un artista");
+        System.out.println("5. Salir");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Elija una opción: ");
         int opcion = scanner.nextInt();
@@ -169,6 +172,9 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
                 System.out.print("Holaaa: ");;
                 break;
             case 4:
+                req4artista(args);
+                break;
+            case 5:
                 System.out.println("Saliendo del sistema...");
                 System.exit(0);
                 break;
@@ -262,8 +268,67 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
 
     
+	public static void req4artista(String[] args) throws FileNotFoundException, IOException {
+        String nombreArtista = inputEnter("Digite el nombre del artista: ");
+
+        contarArtistas(nombreArtista);
+
+    }
 
 
+    public static int contarArtistas(String nombreArtista) throws FileNotFoundException, IOException 
+{ 
+    String archivo = "C:\\Users\\david\\Downloads\\DPOO-PROY2\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    int contador = 0; 
+	FileReader reader = new FileReader( archivo );
+	BufferedReader lector = new BufferedReader( reader ); 
+
+	String linea = lector.readLine( ); 
 
 
+    while (linea != null) {
+        contador++;
+        if (linea.contains(nombreArtista)) {
+            String[] elementos = linea.split(";");
+            List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+    
+            // Asume un ancho predeterminado para cada columna basado en tus datos
+            int[] columnWidths = new int[]{20, 12, 20, 10};
+            String[][] tabla = new String[1][4];
+            tabla[0][0] = lista.get(2);
+            tabla[0][1] = lista.get(3);
+            tabla[0][2] = lista.get(4);
+            tabla[0][3] = lista.get(6);
+    
+            // Línea de separación y encabezados
+            printLine(columnWidths);
+            System.out.printf("| %-" + columnWidths[0] + "s | %-" + columnWidths[1] + "s | %-" + columnWidths[2] + "s | %" + columnWidths[3] + "s |%n", "Nombre", "Fecha", "Lugar", "Precio");
+            printLine(columnWidths);
+            
+            // Datos de la tabla
+            for (int i = 0; i < tabla.length; i++) {
+                System.out.printf("| %-" + columnWidths[0] + "s | %-" + columnWidths[1] + "s | %-" + columnWidths[2] + "s | %" + columnWidths[3] + "s |%n", tabla[i][0], tabla[i][1], tabla[i][2], tabla[i][3]);
+            }
+            printLine(columnWidths);
+        }
+    
+    
+	 	linea = lector.readLine( ); 
+	} 
+	 	lector.close( ); 
+		reader.close( ); 
+		return contador; 
+
+    }
+    private static void printLine(int[] widths) {
+        System.out.print("+");
+        for (int width : widths) {
+            for (int i = 0; i < width + 2; i++) { // +2 para los espacios extra alrededor del texto
+                System.out.print("-");
+            }
+            System.out.print("+");
+        }
+        System.out.println();
+    }
 }
+
