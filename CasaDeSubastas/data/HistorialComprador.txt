@@ -1,4 +1,6 @@
 1234567;Leonardo da Vinci;Monalisa;30/12/1345;Italia;Exhibido;20000;Vendida;Efectivo;Pintura;false
 3ec65c06-3d71-4611-b251-3218d5ea80b8;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
 68330504-84f0-43d0-a642-36f53720eb4f;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
-082c9f4e-b782-4a0e-84de-04a9606263a1;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
+2198265f-21d0-4833-9bec-fdec2db5e755;David;Lindsay;02/02/2024;Bogota;Exhibida;20000.0;Disponible;Efectivo;Escultura;false
+94131971-c1b7-4a86-9e09-dd44f6565b7b;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Subastada;Efectivo;Pintura;false
+02c992da-eaeb-4e95-b37b-a32e7a0a5969;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true

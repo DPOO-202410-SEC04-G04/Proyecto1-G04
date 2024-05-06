@@ -1,4 +1,6 @@
 552802;25000.0;Angel;La pintura;Transferencia electronica
 9743;25000.0;Angel;Cristiano;Transferencia electronica
 3525;25000.0;Angel;Cristiano;Transferencia electronica;
-9589;25000.0;Manuel;Cristiano;Transferencia electronica
+6844;25000.0;Manuel;Lindsay;Transferencia electronica;
+8572;25000.0;Manuel;Monalisa;Transferencia electronica;
+9553;25000.0;Manuel;Cristiano;Transferencia electronica

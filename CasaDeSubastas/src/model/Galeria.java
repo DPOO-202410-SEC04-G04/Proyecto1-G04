@@ -22,8 +22,6 @@ public class Galeria {
 
     private ArrayList<Subasta> subastasActivas;
 
-    private ArrayList<CompraDirecta> comprasDirectas;
-
     private ArrayList<Pieza> inventario;
 
     private ArrayList<Usuario> usuarios;
@@ -34,7 +32,6 @@ public class Galeria {
 
     public Galeria(String pNombreGaleria){
         this.nombreGaleria = pNombreGaleria;
-        this.comprasDirectas = new ArrayList<>();
         this.subastasActivas = new ArrayList<>();
         this.usuarios = new ArrayList<>();
         this.inventario = new ArrayList<>();
@@ -81,18 +78,7 @@ public class Galeria {
     }
 
 
-    public void crearCompraDirecta(String idPieza, float valorObra, Usuario user){
-        if(user.getTipoUsuario().equals("Administrador")){
-            for(Pieza pieza:inventario){
-                if(pieza.getId().equals(idPieza)){
-                    CompraDirecta compraDirecta = new CompraDirecta(valorObra, pieza);
-                    comprasDirectas.add(compraDirecta);
-                    break;
-                }
-            }
-        }
-
-    }
+   
 
     public void addPieza(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza){
         Pieza pieza = new Pieza(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza);
@@ -166,22 +152,8 @@ public class Galeria {
         }
     }
 
-    public void realizarOfertaCompraDirecta(String pIdComprasDirectas, Usuario pUsuario){
-
-        for(CompraDirecta compraDirecta:comprasDirectas){
-            if(compraDirecta.getId().equals(pIdComprasDirectas)){
-                if(pUsuario.getTipoUsuario().equals("Comprador") && checkCompradorNotPropietario(compraDirecta.getPieza().getId(),pUsuario)){
-
-                    //Oferta oferta = new Oferta(compraDirecta.getValor());
-                    //compraDirecta.realizarOferta(oferta);
-
-
-                }
-            }
-        }
-
-
-    }
+   
+        
 
     private boolean checkCompradorNotPropietario(String idPieza, Usuario usuario){
         //TODO: Revisar que para la obra que corresponde con el ID dado el propietario no sea el usuario que la esta deseando comprar
@@ -209,13 +181,7 @@ public class Galeria {
         this.subastasActivas = subastasActivas;
     }
 
-    public ArrayList<CompraDirecta> getComprasDirectas() {
-        return comprasDirectas;
-    }
-
-    public void setComprasDirectas(ArrayList<CompraDirecta> comprasDirectas) {
-        this.comprasDirectas = comprasDirectas;
-    }
+   
 
     public ArrayList<Pieza> getInventario() {
         return inventario;
