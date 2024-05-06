@@ -78,7 +78,11 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
             System.out.println("Se registro con exito");
             System.out.println("\nQue desea hacer?");
-            mostrarMenuComprador(null);
+            while(true)
+            {
+            	mostrarMenuComprador(null);
+            }
+            
             
         }
         else{

@@ -3,4 +3,6 @@
 3525;25000.0;Angel;Cristiano;Transferencia electronica;
 6844;25000.0;Manuel;Lindsay;Transferencia electronica;
 8572;25000.0;Manuel;Monalisa;Transferencia electronica;
-9553;25000.0;Manuel;Cristiano;Transferencia electronica
+9553;25000.0;Manuel;Cristiano;Transferencia electronica;
+9058;25000.0;Manuel;cantin obra de arte;Transferencia electronica;
+5169;25000.0;Manuel;Agua;Transferencia electronica
