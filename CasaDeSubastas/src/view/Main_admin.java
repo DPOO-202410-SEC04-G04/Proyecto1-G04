@@ -64,7 +64,7 @@ public class Main_admin {
 
 public static int contarUsuarios(String usuario, String contrasena) throws FileNotFoundException, IOException 
 { 
-    String archivo = "C:\\Users\\david\\Downloads\\DPOO-PROY2\\Proyecto1-G04\\CasaDeSubastas\\data\\PersistenciaAdmins.txt";
+    String archivo = ".\\data\\PersistenciaAdmins.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
@@ -305,7 +305,7 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
     public static int contarArtistas(String nombreArtista) throws FileNotFoundException, IOException 
 { 
-    String archivo = "C:\\Users\\david\\Downloads\\DPOO-PROY2\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
+    String archivo = ".\\data\\ObrasdeArte.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 

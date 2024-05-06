@@ -63,7 +63,7 @@ public class Main_comprador {
 
 public static int contarUsuarios(String usuario, String contrasena) throws FileNotFoundException, IOException 
 { 
-    String archivo = "C:\\Users\\david\\Downloads\\DPOO-PROY2\\Proyecto1-G04\\CasaDeSubastas\\data\\PersistenciaCompradores.txt";
+    String archivo = ".\\data\\PersistenciaCompradores.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
