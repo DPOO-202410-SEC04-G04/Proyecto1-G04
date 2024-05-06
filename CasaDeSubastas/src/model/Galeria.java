@@ -85,7 +85,7 @@ public class Galeria {
         inventario.add(pieza);
         String linea = pieza.editarObras();
 
-        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+        agregarlinea(".\\data\\ObrasdeArte.txt", linea);
     }
 
 
@@ -94,27 +94,27 @@ public class Galeria {
         Escultura pieza = new Escultura(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, dimensiones, materiales, peso, necesitaElectricidad, tipoArte, detallesAdicionales);
         inventario.add(pieza);
         String linea = pieza.editarObrasEscultura();
-        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+        agregarlinea(".\\data\\ObrasdeArte.txt", linea);
     }
 
     public void addPintura(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza, String dimensiones, String detallesAdicionales){
         Pintura pieza = new Pintura(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, dimensiones, detallesAdicionales);
         inventario.add(pieza);
         String linea = pieza.editarObrasPintura();
-        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+        agregarlinea(".\\data\\ObrasdeArte.txt", linea);
         }
 
     public void addVideo(String pAutor, String pTitulo, String pAnio, String pLugarDeCreacion, String pEstado, float pPrecio, String pDispoinibilidad, String pTipoCompra, String tipoPieza, Float duracion, Float espacioDeMemoria, String detallesAdicionales){
         Video pieza = new Video(pAutor,pTitulo,pAnio,pLugarDeCreacion,pEstado,pPrecio,pDispoinibilidad,pTipoCompra, tipoPieza, duracion, espacioDeMemoria, detallesAdicionales);
         inventario.add(pieza);
         String linea = pieza.editarObrasVideo();
-        agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt", linea);
+        agregarlinea(".\\data\\ObrasdeArte.txt", linea);
     }
     
     public static void addPago(Pagos pago)
     {
     	String linea = pago.lineaPagos();
-    	agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ListaPagos.txt", linea);
+    	agregarlinea(".\\data\\ListaPagos.txt", linea);
     }
     
     public static void addObraHistorial(Comprador comprador)

@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -78,7 +79,11 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
             System.out.println("Se registro con exito");
             System.out.println("\nQue desea hacer?");
-            mostrarMenuAdmin(null);
+            while(true)
+            {
+            	mostrarMenuAdmin(null);
+            }
+            
             
         }
         else{
@@ -100,7 +105,8 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
         System.out.println("1. Registrar Pieza");
         System.out.println("2. Aumentar Limite de compras");
         System.out.println("3. Ver historia comprador");
-        System.out.println("4. Salir");
+        System.out.println("4. Registrar comprador");
+        System.out.println("5. Salir");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Elija una opción: ");
         int opcion = scanner.nextInt();
@@ -163,12 +169,36 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             }
             break;
             case 2:
-                System.out.print("Holaa: ");
+                String usuarioComprador = "";
                 break;
             case 3:
                 System.out.print("Holaaa: ");;
                 break;
             case 4:
+            	String archivo = ".\\data\\PersistenciaCompradores.txt";
+            	String usuario = inputEnter("Ingrese el usuario del comprador: ");
+            	String clave = inputEnter("Ingrese la clave del comprador: ");
+            	String rol = "comprador";
+            	String ID = inputEnter("Ingrese el ID del comprador: ");
+            	String cel = inputEnter("Ingrese el celular del comprador: ");
+            	String limite = inputEnter("Ingrese el limite de compras del comprador: ");
+            	
+            	String linea="\n";
+            	linea+=usuario+";"+clave+";"+rol+";"+ID+";"+cel+";"+limite;
+            	Galeria.agregarlinea(archivo, linea);
+            	
+            	String nom = usuario.split("@")[0];
+            	String ruta = ".\\data\\Comprador"+nom+".txt";
+            	
+            	File file = new File(ruta);
+
+            	if(!file.exists())
+            	{
+            	   file.createNewFile();
+            	   System.out.println("Comprador registrado");
+            	}
+            	break;
+            case 5:
                 System.out.println("Saliendo del sistema...");
                 System.exit(0);
                 break;

@@ -1,1 +1,3 @@
-j.hurtado@comprador.com;2345
+j.hurtado@comprador.com;2345;comprador;99999;3154527831;100000
+cantin@comprador.com;9090;comprador;hs62hs729;30028172839;100000
+ggg@comprador.com;9090;comprador;jugyt6rf6yf6;3677754456;100000
