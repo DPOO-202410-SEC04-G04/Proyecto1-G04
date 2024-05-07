@@ -120,7 +120,7 @@ public class Galeria {
     public static void addObraHistorial(Comprador comprador)
     {
     	String linea = comprador.lineaComprador(comprador);
-    	agregarlinea("C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt", linea);
+    	agregarlinea(".\\data\\Comprador"+comprador.getNombre()+".txt", linea);
     }
     
 

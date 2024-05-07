@@ -23,6 +23,8 @@ import java.util.Scanner;
 
 
 public class Main_comprador {
+	
+	private static String usuario;
 
     public static String inputEnter(String mensaje)
     {
@@ -47,7 +49,7 @@ public class Main_comprador {
 
         System.out.println("Bienvenido al sistema de la Galeria");
         System.out.println("------------------------");
-        String usuario = inputEnter("Ingrese su usuario: ");
+        usuario = inputEnter("Ingrese su usuario: ");
         String contrasena = inputEnter("Ingrese su contrasena: ");
         
         contarUsuarios(usuario, contrasena);
@@ -70,11 +72,12 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 
 	String linea = lector.readLine( ); 
 
-
+	boolean contiene = false;
 	
  	while( linea != null ) { 
 		contador++; 
         if (linea.contains(usuario) && linea.contains(contrasena)){
+        	contiene = true;
 
             System.out.println("Se registro con exito");
             System.out.println("\nQue desea hacer?");
@@ -84,10 +87,6 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             }
             
             
-        }
-        else{
-
-            System.out.println("Acceso denegado");
             
         }
     
@@ -95,6 +94,11 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 	} 
 	 	lector.close( ); 
 		reader.close( ); 
+		if(contiene==false)
+		{
+			System.out.println("Acceso denegado");
+            System.exit(0);
+		}
 		return contador; 
 
     }
@@ -112,7 +116,7 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
         
         switch (opcion) {
             case 1:
-            System.out.println("Ejecutando opción 3...");
+            System.out.println("Ejecutando opción 1...");
             req3(args);
             int opcionSubmenu2 = 0;
             while (opcionSubmenu2 != 3) {
@@ -156,22 +160,18 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             }
             break;
             case 2:
-            Pieza piezap1 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
-            Comprador compradorp1 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap1);
-            ArrayList<String[]> list = new ArrayList();
-            list = compradorp1.estadoPiezas();
-            for(String[] linea: list)
-            {
-                System.out.println("Pieza: "+linea[2]);
-                System.out.println("Estado: "+linea[5]);
-            }
-            break;
+	            ArrayList<String[]> list = new ArrayList();
+	            list = Comprador.estadoPiezas(usuario);
+	            for(String[] linea: list)
+	            {
+	                System.out.println("Pieza: "+linea[2]);
+	                System.out.println("Estado: "+linea[3]);
+	            }
+	            break;
             case 3:
-            Pieza piezap2 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
-            Comprador compradorp2 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap2);
             ArrayList<String[]> l = new ArrayList();
-            l = compradorp2.historialCompleto();
-            System.out.println("Historial Piezas de "+compradorp2.getNombre());
+            l = Comprador.historialCompleto(usuario);
+            System.out.println("Historial Piezas de "+usuario);
             for(String[] linea: l)
             {
                 System.out.println("------------------------------------------------------------------");
@@ -193,10 +193,20 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             Random random = new Random();
             int num = random.nextInt(10000);
             String id = String.valueOf(num);
-            float valorPago = 25000;
-            Pieza pieza = new Pieza("Raul", "Cristiano", "01/07/1272", "Colombia", "Exhibida", 25000, "Vendida", "Transferencia electronica", "Pintura");
-            Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, pieza);
-            Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
+            String nombreObra = inputEnter("Digite el nombre de la Obra: ");
+            String autorObra = inputEnter("Digite el autor de la Obra: ");
+            String fecha = inputEnter("Digite la fecha de la Obra (dd/mm/YYYY): ");
+            String lugar = inputEnter("Digite el lugar de la Obra: ");
+            String estado = inputEnter("Digite el estado de la Obra (Bodega/Exhibido): ");
+            System.out.println("Ingrese el valor del pago");
+            float valorPago = scanner.nextInt();
+            String disponibilidad = inputEnter("Digite la disponibilidad de la Obra (Vendida/Devuelta/Subastada/Disponible): ");
+            String tipoCompra = inputEnter("Digite el tipo de Compra de la Obra: ");
+            String tipoObra = inputEnter("Ingrese el tipo de la pieza: ");
+            
+            Pieza pieza = new Pieza(autorObra, nombreObra, fecha, lugar, estado, valorPago, disponibilidad, tipoCompra, tipoObra);
+            Comprador comprador = new Comprador(usuario, "Comprador", "C134", "3211913008", 999999999, pieza);
+            Pagos pago = new Pagos(id, valorPago, comprador, pieza, tipoCompra);
             Pagos.realizarPago(pago);
             break;
 
@@ -223,7 +233,6 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
     public static int contarSubastas() throws FileNotFoundException, IOException 
 { 
 	String archivo = ".\\data\\ObrasdeArte.txt";
-	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     int contador = 0; 
 	FileReader reader = new FileReader( archivo );
 	BufferedReader lector = new BufferedReader( reader ); 
@@ -252,9 +261,7 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
 }
 
 public static int contarLineasNombre(String nombreObra) throws IOException {
-
     String archivo = ".\\data\\ObrasdeArte.txt";
-    //String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     List<String> lineas = new ArrayList<>();
     int contador = 0;
 
@@ -275,8 +282,8 @@ public static int contarLineasNombre(String nombreObra) throws IOException {
                     int num = random.nextInt(10000);
                     String id = String.valueOf(num);
                     float valorPago = 25000;
-
-                    Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, pieza);
+                    List<String> info = buscarUsuario();
+                    Comprador comprador = new Comprador(usuario, "Comprador", info.get(3), info.get(4), Float.parseFloat(info.get(5)), pieza);
                     Pagos pago = new Pagos(id, valorPago, comprador, pieza, "Transferencia electronica");
 
                     Pagos.realizarPago(pago);
@@ -297,6 +304,28 @@ public static int contarLineasNombre(String nombreObra) throws IOException {
     }
 
     return contador;
+	}
+public static List<String> buscarUsuario() throws IOException, FileNotFoundException
+{
+	String archivo = ".\\data\\PersistenciaCompradores.txt";
+	FileReader leer = new FileReader( archivo );
+	BufferedReader lector1 = new BufferedReader( leer ); 
+
+	String linea1 = lector1.readLine( );
+	List<String> lista1 = new ArrayList<>();
+	while( linea1 != null ) {
+		String[] L = linea1.split(";");
+		if(L[0].equals(usuario))
+		{
+			lista1 = new ArrayList<>(Arrays.asList(L));
+		}
+		
+		linea1 = lector1.readLine( ); 
+	}
+	lector1.close( ); 
+	leer.close( ); 
+	return lista1;
 }
 
-    }
+
+}

@@ -5,4 +5,6 @@
 8572;25000.0;Manuel;Monalisa;Transferencia electronica;
 9553;25000.0;Manuel;Cristiano;Transferencia electronica;
 9058;25000.0;Manuel;cantin obra de arte;Transferencia electronica;
-5169;25000.0;Manuel;Agua;Transferencia electronica
+5169;25000.0;Manuel;Agua;Transferencia electronica;
+3647;25000.0;cantin;pumba;Efectivo;
+7352;15000.0;cantin@comprador.com;pumba;Efectivo

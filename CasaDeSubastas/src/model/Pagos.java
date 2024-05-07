@@ -28,11 +28,11 @@ public class Pagos {
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Pagos(String ID, float VALORPAGO, Comprador COMPRADOR, Pieza piezaComprada, String formaPago){
+    public Pagos(String ID, float VALORPAGO, Comprador comp, Pieza piezaComprada, String formaPago){
         //TODO: Constructor pagos
     	this.id = ID;
     	this.valorPago = VALORPAGO;
-    	this.comprador = COMPRADOR;
+    	this.comprador = comp;
     	this.piezaComprada = piezaComprada;
     	this.formaPago = formaPago;
     }
@@ -72,9 +72,9 @@ public class Pagos {
     	this.valorPago = VALORPAGO;
     }
     
-    public void setComprador(Comprador COMPRADOR)
+    public void setComprador(Comprador comprador)
     {
-    	this.comprador = COMPRADOR;
+    	this.comprador = comprador;
     }
     
     public void setPiezaComprada(Pieza PIEZA)
@@ -116,5 +116,7 @@ public class Pagos {
     		System.out.println("Pago realizado exitosamente");
     	}
     }
+    
+    
     
 }

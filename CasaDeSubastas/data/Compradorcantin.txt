@@ -1,0 +1,9 @@
+1234567;Leonardo da Vinci;Monalisa;30/12/1345;Italia;Exhibido;20000;Vendida;Efectivo;Pintura;false
+3ec65c06-3d71-4611-b251-3218d5ea80b8;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
+68330504-84f0-43d0-a642-36f53720eb4f;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
+2198265f-21d0-4833-9bec-fdec2db5e755;David;Lindsay;02/02/2024;Bogota;Exhibida;20000.0;Disponible;Efectivo;Escultura;false
+94131971-c1b7-4a86-9e09-dd44f6565b7b;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Subastada;Efectivo;Pintura;false
+02c992da-eaeb-4e95-b37b-a32e7a0a5969;Raul;Cristiano;01/07/1272;Colombia;Exhibida;25000.0;Vendida;Transferencia electronica;Pintura;true
+ff783f97-ab97-4dbe-a34f-38e046405578;cantin autor;cantin obra de arte;07/07/1000;Cantin casa;Exhibida;5.0E8;Subastada;Efectivo;Pintura;false
+fb2fdfe3-dc0f-464c-874a-a19aa0cd284c;Yo;Agua;01/01/2017;Cali;Bodega;45.0;Disponible;Efectivo;Fotografia;false
+925f1bd1-6067-4454-a0fd-937c2aa34a13;timon;pumba;03/03/2023;china;Bodega;25000.0;Disponible;Efectivo;Pintura;false

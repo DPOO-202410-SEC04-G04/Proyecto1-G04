@@ -1,0 +1,2 @@
+
+d315f1ba-8ec9-40f6-bcab-1b96242408b2;timon;pumba;03/03/2023;china;Bodega;15000.0;Disponible;Efectivo;Pintura;false

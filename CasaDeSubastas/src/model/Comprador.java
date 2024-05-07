@@ -30,8 +30,8 @@ public class Comprador extends Usuario{
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public Comprador(String nombre, String tipoUsuario, String id, String cel, float pValorMaxCompra, Pieza pieza){
-        super(nombre, tipoUsuario, id, cel);
+    public Comprador(String usuario, String tipoUsuario, String id, String cel, float pValorMaxCompra, Pieza pieza){
+        super(usuario, tipoUsuario, id, cel);
         this.valorMaxCompra = pValorMaxCompra;
         this.piezaComprada = pieza;
     }
@@ -47,10 +47,9 @@ public class Comprador extends Usuario{
     	return this.valorMaxCompra;
     }
     
-    public ArrayList<String[]> estadoPiezas() throws FileNotFoundException, IOException
+    public static ArrayList<String[]> estadoPiezas(String usuario) throws FileNotFoundException, IOException
     {
-    	String archivo = ".\\data\\HistorialComprador.txt";
-    	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
+    	String archivo = ".\\data\\Comprador"+usuario.split("@")[0]+".txt";
     	FileReader reader = new FileReader( archivo );
     	BufferedReader lector = new BufferedReader( reader ); 
     	ArrayList<String[]> lista = new ArrayList();
@@ -70,10 +69,9 @@ public class Comprador extends Usuario{
     	
     }
     
-    public ArrayList<String[]> historialCompleto() throws FileNotFoundException, IOException
+    public static ArrayList<String[]> historialCompleto(String usuario) throws FileNotFoundException, IOException
     {
-    	String archivo = ".\\data\\HistorialComprador.txt";
-    	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
+    	String archivo = ".\\data\\Comprador"+usuario.split("@")[0]+".txt";
     	FileReader reader = new FileReader( archivo );
     	BufferedReader lector = new BufferedReader( reader ); 
     	ArrayList<String[]> lista = new ArrayList();
@@ -92,9 +90,10 @@ public class Comprador extends Usuario{
     	
     }
     
-    public ArrayList<Pieza> leerHistorial() throws FileNotFoundException, IOException
+    public ArrayList<Pieza> leerHistorial(String Usuario) throws FileNotFoundException, IOException
     {
-    	String archivo = ".\\data\\HistorialComprador.txt";
+    	String u = Usuario.split("@")[0];
+    	String archivo = ".\\data\\Comprador"+u+".txt";
     	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialComprador.txt";
     	FileReader reader = new FileReader( archivo );
     	BufferedReader lector = new BufferedReader( reader ); 
@@ -118,7 +117,8 @@ public class Comprador extends Usuario{
     
     public float getTotalCompras() throws FileNotFoundException, IOException
     {
-    	ArrayList<Pieza> lista = leerHistorial();
+    	String usuario = this.getNombre();
+    	ArrayList<Pieza> lista = leerHistorial(usuario);
     	float suma = 0;
     	
     	for(Pieza pieza: lista)
@@ -172,29 +172,7 @@ public class Comprador extends Usuario{
     	return texto;
     }
 
-    public void realizarCompraPrecioFijo(String nombreComprador, float valorOfertado){
-        /*
-        un usuario registrado como comprador en la plataforma podrá
-        ofrecerse a realizar la compra.
-        En ese momento la pieza quedará bloqueada
-        (nadie más podrá comprarla) hasta que el
-        administrador del sistema verifique que el usuario sea real
-        y la seriedad de la oferta.
-        En caso positivo, la pieza quedará vendida. En caso negativo, volverá a su estado anterior. Las piezas que estén en la bodega de la galería también pueden ser vendidas – no sólo las que estén exhibidas.
-         */
 
-
-
-        //Crear oferta
-        Oferta ofertaCompraPrecioFijo = new Oferta(nombreComprador, valorOfertado);
-
-        //Asignar oferta a compra directa
-
-
-
-
-
-    }
 
     public static void realizarOfertaSubasta(String pieza) throws FileNotFoundException, IOException{
     	String a = ".\\data\\ObrasdeArte.txt";
