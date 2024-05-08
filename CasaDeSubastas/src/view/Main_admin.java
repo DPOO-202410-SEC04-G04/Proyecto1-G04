@@ -168,7 +168,9 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             }
             break;
             case 2:
-                String usuarioComprador = "";
+                String usuarioComprador = inputEnter("Ingrese el usuario del comprador: ");
+                Administrador.cambiarValorMaximoCompras(usuarioComprador);
+                System.out.println("Limite de compras aumentado exitosamente");
                 break;
             case 3:
                 System.out.print("Holaaa: ");;

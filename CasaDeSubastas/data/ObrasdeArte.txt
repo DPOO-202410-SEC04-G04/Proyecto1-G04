@@ -14,3 +14,6 @@ bbbb9195-c710-44f3-8381-7c2bbde75fb3;Yo;Agua;01/01/2017;Cali;Bodega;45.0;Vendida
 024eedf2-6b29-4d88-83cc-fb4b6b27cd6a;Van Gogh;La noche Estrellada;01/01/1889;Inglaterra;Exhibido;902.0;Vendida;Efectivo;Pintura;2x5x3;La obra mas linda
 4cf5e1b8-8a53-4d99-ae71-7e0eaa44ac5a;brasilero;Cristo Redentor;01/01/1000;Rio de Janeiro;Bodega;9000.0;Vendida;Tarjeta de Credito;Escultura;100x100x100;Marmol;100000;false;Cubismo;Lindo 
 8256a9eb-d8b1-4850-9791-df51edc2db5d;David;Lindsay;02/02/2024;Bogota;Exhibida;20000.0;Vendida;Efectivo;Escultura;2x2x2;Cemento;50;false;Moderna;Monitora
+
+ea559e0d-36ad-46e2-96b3-2dd933b549bc;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+c26a6f8f-19d0-403f-945b-7b7d050dc268;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
