@@ -1,9 +1,9 @@
-2;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Disponible;Efectivo;Pintura
-9c8da8ae-cc77-425b-9092-9d5e1b52e9c1;Juan Jose;Cali;03/07/2000;Colombia;Bodega;50000.0;Vendida;transferencia electronica;video
+2;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Subastada;Efectivo;Pintura
+9c8da8ae-cc77-425b-9092-9d5e1b52e9c1;Juan Jose;Cali;03/07/2000;Colombia;Bodega;50000.0;Subastada;transferencia electronica;video
 a270a734-acf5-4c9a-ace6-af4f4e470ea4;Sandro Botticelli;El nacimiento de Venus;01/01/1485;Italia;Exhibida;200000.0;Vendida;Efectivo;Pintura
-c423a333-69a7-4b20-83da-0934b3627132;egipcio random;La Esfinge;01/01/0000;Egipto;Exhibida;1.0E8;Vendida;Transferencia electronica;Escultura
-5bc690f5-fa43-4bdd-85fa-5f388bcc1c5a;egipcio random;La Esfinge;01/01/0000;Egipto;Exhibida;1.0E8;Vendida;Transferencia electronica;Escultura;20mx19mx73m;Realismo
-07634d5c-2cf6-4402-9dbf-842f022476a1;Chica aupa;Aupa Athletic;14/08/2015;Bilbao;Exhibida;1.0E10;Vendida;Efectivo;Video
+c423a333-69a7-4b20-83da-0934b3627132;egipcio random;La Esfinge;01/01/0000;Egipto;Exhibida;1.0E8;Subastada;Transferencia electronica;Escultura
+5bc690f5-fa43-4bdd-85fa-5f388bcc1c5a;egipcio random;La Esfinge;01/01/0000;Egipto;Exhibida;1.0E8;Disponible;Transferencia electronica;Escultura;20mx19mx73m;Realismo
+07634d5c-2cf6-4402-9dbf-842f022476a1;Chica aupa;Aupa Athletic;14/08/2015;Bilbao;Exhibida;1.0E10;Subastada;Efectivo;Video
 89fbce67-957e-4a74-a814-aba8b205acc2;chica aupa;Aupa Athletic;14/08/2015;Bilbao;Exhibida;1.0E14;Vendida;Efectivo;Video;3x3x3;1.0;Buen video
 d259d3a0-b747-45fc-b33d-f214cbb5a28d;chica aupa;Aupa Athletic;14/08/2015;Bilbao;Exhibida;1.0E14;Vendida;Efectivo;Video;4.0;1.0;Buen video
 89a46715-f426-4461-9c3b-bac85b589682;Richard Drew;The Falling Man;04/02/2001;Estados Unidos;Bodega;9999999.0;Vendida;Consignacion;Fotografia
@@ -14,6 +14,7 @@ bbbb9195-c710-44f3-8381-7c2bbde75fb3;Yo;Agua;01/01/2017;Cali;Bodega;45.0;Vendida
 024eedf2-6b29-4d88-83cc-fb4b6b27cd6a;Van Gogh;La noche Estrellada;01/01/1889;Inglaterra;Exhibido;902.0;Vendida;Efectivo;Pintura;2x5x3;La obra mas linda
 4cf5e1b8-8a53-4d99-ae71-7e0eaa44ac5a;brasilero;Cristo Redentor;01/01/1000;Rio de Janeiro;Bodega;9000.0;Vendida;Tarjeta de Credito;Escultura;100x100x100;Marmol;100000;false;Cubismo;Lindo 
 8256a9eb-d8b1-4850-9791-df51edc2db5d;David;Lindsay;02/02/2024;Bogota;Exhibida;20000.0;Vendida;Efectivo;Escultura;2x2x2;Cemento;50;false;Moderna;Monitora
-
-ea559e0d-36ad-46e2-96b3-2dd933b549bc;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
-c26a6f8f-19d0-403f-945b-7b7d050dc268;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+8d3a9b4b-5a71-4199-ae4e-cd9db4afb1e3;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+219ba164-6976-49ae-95c3-db9b42ab92b2;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+744c3cef-842f-4156-9ca2-6a35be3c1be0;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+d77d8286-80ab-4b92-9788-d57509464cfc;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita

@@ -1,10 +1,5 @@
-552802;25000.0;Angel;La pintura;Transferencia electronica
-9743;25000.0;Angel;Cristiano;Transferencia electronica
-3525;25000.0;Angel;Cristiano;Transferencia electronica;
-6844;25000.0;Manuel;Lindsay;Transferencia electronica;
-8572;25000.0;Manuel;Monalisa;Transferencia electronica;
-9553;25000.0;Manuel;Cristiano;Transferencia electronica;
-9058;25000.0;Manuel;cantin obra de arte;Transferencia electronica;
-5169;25000.0;Manuel;Agua;Transferencia electronica;
 3647;25000.0;cantin;pumba;Efectivo;
-7352;15000.0;cantin@comprador.com;pumba;Efectivo
+7352;15000.0;cantin@comprador.com;pumba;Efectivo;
+8111;10000.0;cantin@comprador.com;termo;Efectivo;
+2832;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+7494;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica

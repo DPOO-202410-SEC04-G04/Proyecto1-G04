@@ -62,40 +62,48 @@ public class Main_admin {
 
 
 
-public static int contarUsuarios(String usuario, String contrasena) throws FileNotFoundException, IOException 
-{ 
-    String archivo = ".\\data\\PersistenciaAdmins.txt";
-    int contador = 0; 
-	FileReader reader = new FileReader( archivo );
-	BufferedReader lector = new BufferedReader( reader ); 
+    public static int contarUsuarios(String usuario, String contrasena) throws IOException {
+        String archivo = ".\\data\\PersistenciaAdmins.txt";
+        int contador = 0;
+        FileReader reader = new FileReader(archivo);
+        BufferedReader lector = new BufferedReader(reader);
+        List<List<String>> listaUsuarios = new ArrayList<>();
+    
+        String linea = lector.readLine();
+        boolean contiene = false;
+    
+        while (linea != null) {
+            String[] datos = linea.split(";");
 
-	String linea = lector.readLine( ); 
-
-
-	
- 	while( linea != null ) { 
-		contador++; 
-        if (linea.contains(usuario) && linea.contains(contrasena)){
-
-            System.out.println("Se registro con exito");
-            System.out.println("\nQue desea hacer?");
-            while (true){
-                mostrarMenuAdmin(null);
-            }
+                List<String> parUsuarioContrasena = new ArrayList<>();
+                parUsuarioContrasena.add(datos[0]); // Usuario
+                parUsuarioContrasena.add(datos[1]); // Contraseña
+                listaUsuarios.add(parUsuarioContrasena);
+                
+                // Verificar si los datos leídos coinciden con los parámetros de usuario y contraseña
+                if (datos[0].equals(usuario) && datos[1].equals(contrasena)) {
+                    contiene = true;
+                    System.out.println("Se registro con exito");
+                System.out.println("\nQue desea hacer?");
+                while(true)
+                {
+            	    mostrarMenuAdmin(datos);
+                }
+                }
             
-        }
-        else{
-
-            System.out.println("Acceso denegado");
-            
+            contador++;
+            linea = lector.readLine(); // Leer la próxima línea
         }
     
-	 	linea = lector.readLine( ); 
-	} 
-	 	lector.close( ); 
-		reader.close( ); 
-		return contador; 
-
+        lector.close();
+        reader.close();
+    
+    
+        if (!contiene) {
+            System.out.println("Acceso Denegado");
+        }
+    
+        return contador;
     }
 
 
@@ -105,7 +113,8 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
         System.out.println("3. Ver historia comprador");
         System.out.println("4. Registrar comprador");
         System.out.println("5. Consultar Historial de un Artista");
-        System.out.println("6. Salir");
+        System.out.println("6. Consultar Historial de una pieza");
+        System.out.println("7. Salir");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Elija una opción: ");
         int opcion = scanner.nextInt();
@@ -173,7 +182,25 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
                 System.out.println("Limite de compras aumentado exitosamente");
                 break;
             case 3:
-                System.out.print("Holaaa: ");;
+            	String user = inputEnter("Ingrese el usuario del comprador: ");
+            	ArrayList<String[]> l = new ArrayList();
+                l = Comprador.historialCompleto(user);
+                System.out.println("Historial Piezas de "+user);
+                for(String[] linea: l)
+                {
+                    System.out.println("------------------------------------------------------------------");
+                    System.out.println("ID: "+linea[0]);
+                    System.out.println("Autor: "+linea[1]);
+                    System.out.println("Pieza: "+linea[2]);
+                    System.out.println("Fecha: "+linea[3]);
+                    System.out.println("Lugar de creacion: "+linea[4]);
+                    System.out.println("Estado: "+linea[5]);
+                    System.out.println("Precio: "+linea[6]);
+                    System.out.println("Disponibilidad: "+linea[7]);
+                    System.out.println("Metodo de pago: "+linea[8]);
+                    System.out.println("Tipo de pieza: "+linea[9]);
+                    System.out.println("Propietario de la pieza: "+linea[10]);
+                }
                 break;
             case 4:
             	String archivo = ".\\data\\PersistenciaCompradores.txt";
@@ -203,7 +230,7 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             case 5:
                 req4artista(args);
                 break;
-            case 6:
+            case 7:
                 System.out.println("Saliendo del sistema...");
                 System.exit(0);
                 break;

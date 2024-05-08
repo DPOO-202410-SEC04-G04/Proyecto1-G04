@@ -50,7 +50,7 @@ public class Administrador extends Usuario{
                     writer.write(nuevaLinea);
                 } else {
                     // Si no, escribir la línea original
-                    writer.write(linea + System.lineSeparator());
+                    writer.write(linea);
                 }
             }
             writer.close();

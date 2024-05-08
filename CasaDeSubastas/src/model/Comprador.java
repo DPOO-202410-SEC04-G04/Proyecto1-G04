@@ -176,7 +176,6 @@ public class Comprador extends Usuario{
 
     public static void realizarOfertaSubasta(String pieza) throws FileNotFoundException, IOException{
     	String a = ".\\data\\ObrasdeArte.txt";
-    	//String a = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     	FileReader leer = new FileReader( a );
     	BufferedReader lector1 = new BufferedReader( leer ); 
 
@@ -196,7 +195,6 @@ public class Comprador extends Usuario{
     	float precio = Float.parseFloat(lista1.get(6));
     	float valorInicial = precio/2;
     	float valorMinimo = (float) (precio*0.75);
-    	//String archivo = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\HistorialOfertas.txt";
     	String archivo = ".\\data\\HistorialOfertas.txt";
     	
     	FileReader reader = new FileReader( archivo );
@@ -224,7 +222,6 @@ public class Comprador extends Usuario{
     	else
     	{
     		String arch = ".\\data\\ObrasdeArte.txt";
-    		//String arch = "C:\\Users\\USUARIO\\git\\Proyecto1-G04\\CasaDeSubastas\\data\\ObrasdeArte.txt";
     		List<String> lineas = new ArrayList<>();
     		try (BufferedReader lec = new BufferedReader(new FileReader(arch))) {
     	        String lin;
@@ -244,7 +241,7 @@ public class Comprador extends Usuario{
     	                    String id = String.valueOf(num);
     	                    float valorPago = 25000;
 
-    	                    Comprador comprador = new Comprador("Manuel", "Comprador", "C134", "3211913008", 999999999, piez);
+    	                    Comprador comprador = new Comprador("cantin@comprador.com", "Comprador", "C134", "3211913008", 999999999, piez);
     	                    Pagos pago = new Pagos(id, valorPago, comprador, piez, "Transferencia electronica");
 
     	                    Pagos.realizarPago(pago);

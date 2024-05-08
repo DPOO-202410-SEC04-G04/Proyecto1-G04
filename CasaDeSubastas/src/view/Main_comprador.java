@@ -63,44 +63,49 @@ public class Main_comprador {
 
 
 
-public static int contarUsuarios(String usuario, String contrasena) throws FileNotFoundException, IOException 
-{ 
-    String archivo = ".\\data\\PersistenciaCompradores.txt";
-    int contador = 0; 
-	FileReader reader = new FileReader( archivo );
-	BufferedReader lector = new BufferedReader( reader ); 
+    public static int contarUsuarios(String usuario, String contrasena) throws IOException {
+        String archivo = ".\\data\\PersistenciaCompradores.txt";
+        int contador = 0;
+        FileReader reader = new FileReader(archivo);
+        BufferedReader lector = new BufferedReader(reader);
+        List<List<String>> listaUsuarios = new ArrayList<>();
+    
+        String linea = lector.readLine();
+        boolean contiene = false;
+    
+        while (linea != null) {
+            String[] datos = linea.split(";");
 
-	String linea = lector.readLine( ); 
-
-	boolean contiene = false;
-	
- 	while( linea != null ) { 
-		contador++; 
-        if (linea.contains(usuario) && linea.contains(contrasena)){
-        	contiene = true;
-
-            System.out.println("Se registro con exito");
-            System.out.println("\nQue desea hacer?");
-            while(true)
-            {
-            	mostrarMenuComprador(null);
-            }
+                List<String> parUsuarioContrasena = new ArrayList<>();
+                parUsuarioContrasena.add(datos[0]); // Usuario
+                parUsuarioContrasena.add(datos[1]); // Contraseña
+                listaUsuarios.add(parUsuarioContrasena);
+                
+                // Verificar si los datos leídos coinciden con los parámetros de usuario y contraseña
+                if (datos[0].equals(usuario) && datos[1].equals(contrasena)) {
+                    contiene = true;
+                    System.out.println("Se registro con exito");
+                System.out.println("\nQue desea hacer?");
+                while(true)
+                {
+            	    mostrarMenuComprador(datos);
+                }
+                }
             
-            
-            
+            contador++;
+            linea = lector.readLine(); // Leer la próxima línea
         }
     
-	 	linea = lector.readLine( ); 
-	} 
-	 	lector.close( ); 
-		reader.close( ); 
-		if(contiene==false)
-		{
-			System.out.println("Acceso denegado");
-            System.exit(0);
-		}
-		return contador; 
+        lector.close();
+        reader.close();
+    
+    
+        if (!contiene) {
+            System.out.println("Acceso Denegado");
+        }
 
+    
+        return contador;
     }
 
 
@@ -109,7 +114,9 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
         System.out.println("2. Consultar Estado de mis Piezas");
         System.out.println("3. Consultar Historial de mis Piezas");
         System.out.println("4. Realizar Pago");
-        System.out.println("5. Salir");
+        System.out.println("5. Ver historia artista");
+        System.out.println("6. Ver historia pieza");
+        System.out.println("7. Salir");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Elija una opción: ");
         int opcion = scanner.nextInt();
@@ -209,8 +216,18 @@ public static int contarUsuarios(String usuario, String contrasena) throws FileN
             Pagos pago = new Pagos(id, valorPago, comprador, pieza, tipoCompra);
             Pagos.realizarPago(pago);
             break;
-
+            
             case 5:
+            	String nombreArtista = inputEnter("Digite el nombre del artista: ");
+
+                contarArtistas(nombreArtista);
+                break;
+                
+            case 6:
+            	
+            	break;
+
+            case 7:
                 System.out.println("Saliendo del sistema...");
                 System.exit(0);
                 break;
@@ -325,6 +342,60 @@ public static List<String> buscarUsuario() throws IOException, FileNotFoundExcep
 	lector1.close( ); 
 	leer.close( ); 
 	return lista1;
+}
+public static int contarArtistas(String nombreArtista) throws FileNotFoundException, IOException 
+{ 
+    String archivo = ".\\data\\ObrasdeArte.txt";
+    int contador = 0; 
+	FileReader reader = new FileReader( archivo );
+	BufferedReader lector = new BufferedReader( reader ); 
+
+	String linea = lector.readLine( ); 
+
+
+    while (linea != null) {
+        contador++;
+        if (linea.contains(nombreArtista)) {
+            String[] elementos = linea.split(";");
+            List<String> lista = new ArrayList<>(Arrays.asList(elementos));
+    
+            // Asume un ancho predeterminado para cada columna basado en tus datos
+            int[] columnWidths = new int[]{20, 12, 20, 10};
+            String[][] tabla = new String[1][4];
+            tabla[0][0] = lista.get(2);
+            tabla[0][1] = lista.get(3);
+            tabla[0][2] = lista.get(4);
+            tabla[0][3] = lista.get(6);
+    
+            // Línea de separación y encabezados
+            printLine(columnWidths);
+            System.out.printf("| %-" + columnWidths[0] + "s | %-" + columnWidths[1] + "s | %-" + columnWidths[2] + "s | %" + columnWidths[3] + "s |%n", "Nombre", "Fecha", "Lugar", "Precio");
+            printLine(columnWidths);
+            
+            // Datos de la tabla
+            for (int i = 0; i < tabla.length; i++) {
+                System.out.printf("| %-" + columnWidths[0] + "s | %-" + columnWidths[1] + "s | %-" + columnWidths[2] + "s | %" + columnWidths[3] + "s |%n", tabla[i][0], tabla[i][1], tabla[i][2], tabla[i][3]);
+            }
+            printLine(columnWidths);
+        }
+    
+    
+	 	linea = lector.readLine( ); 
+	} 
+	 	lector.close( ); 
+		reader.close( ); 
+		return contador; 
+
+    }
+private static void printLine(int[] widths) {
+    System.out.print("+");
+    for (int width : widths) {
+        for (int i = 0; i < width + 2; i++) { // +2 para los espacios extra alrededor del texto
+            System.out.print("-");
+        }
+        System.out.print("+");
+    }
+    System.out.println();
 }
 
 

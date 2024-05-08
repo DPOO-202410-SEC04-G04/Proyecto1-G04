@@ -1,4 +1,4 @@
-1232343;Manuel;10000
-5747373;Manuel;12000
-129020920;Manuel;15000
-910000;Manuel;16000
+1232343;cantin@comprador.com;10000
+5747373;ggg@comprador.com;12000
+129020920;cantin@comprador.com;15000
+910000;ggg@comprador.com;16000
