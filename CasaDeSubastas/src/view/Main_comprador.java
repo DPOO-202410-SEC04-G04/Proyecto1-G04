@@ -3,9 +3,11 @@ package view;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -224,7 +226,7 @@ public class Main_comprador {
                 break;
                 
             case 6:
-            	
+            	reqpieza(args);
             	break;
 
             case 7:
@@ -396,6 +398,58 @@ private static void printLine(int[] widths) {
         System.out.print("+");
     }
     System.out.println();
+}
+
+public static void reqpieza(String[] args) throws FileNotFoundException, IOException {
+    String nombreObra = inputEnter("Digite el nombre del artista: ");
+
+    contarPiezas(nombreObra);
+
+}
+
+public static void contarPiezas(String nombreObra) throws FileNotFoundException, IOException {
+    String directoryPath = ".\\data\\";
+
+    File folder = new File(directoryPath);
+    File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+        @Override
+        public boolean accept(File dir, String name) {
+            return name.startsWith("Comprador") && name.endsWith(".txt");
+        }
+    });
+
+    if (listOfFiles != null) {
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                System.out.println("Revisando archivo: " + file.getName());
+                searchArtworkInFile(file, nombreObra);
+            }
+        }
+    } else {
+        System.out.println("No se encontraron archivos o el directorio no existe.");
+    }
+}
+
+private static void searchArtworkInFile(File file, String nombreObra) {
+    try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        String line;
+        int lineNumber = 1;
+        boolean found = false;
+        while ((line = br.readLine()) != null) {
+            if (line.contains(nombreObra)) {
+                String[] items = line.split(";");
+                System.out.println(nombreObra + " encontrada en " + file.getName()  + ": " + Arrays.toString(items));
+                found = true;
+            }
+            lineNumber++;
+        }
+        if (!found) {
+            System.out.println(nombreObra + " no encontrada en " + file.getName());
+        }
+    } catch (IOException e) {
+        System.out.println("Error al leer el archivo: " + file.getName());
+        e.printStackTrace();
+    }
 }
 
 

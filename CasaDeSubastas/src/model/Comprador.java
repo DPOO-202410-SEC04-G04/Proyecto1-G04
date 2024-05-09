@@ -168,7 +168,7 @@ public class Comprador extends Usuario{
     	{
     		esPropiedad = true;
     	}
-    	texto+="\n"+id+";"+autor+";"+titulo+";"+anio+";"+lugar+";"+estado+";"+precio+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza+";"+String.valueOf(esPropiedad);
+    	texto+=id+";"+autor+";"+titulo+";"+anio+";"+lugar+";"+estado+";"+precio+";"+disponibilidad+";"+tipoCompra+";"+tipoPieza+";"+String.valueOf(esPropiedad)+"\n";
     	return texto;
     }
 
