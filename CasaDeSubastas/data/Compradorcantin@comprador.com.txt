@@ -1,3 +1,0 @@
-
-69703b62-963c-4c5d-a558-7bee522f18da;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Subastada;Efectivo;Pintura;false
-bef411a3-988a-4146-a3a0-f3b2f8cc53df;Leonardo Da Vinci;Monalisa;01/01/1200;Italia;Exhibida;20000.0;Subastada;Efectivo;Pintura;false

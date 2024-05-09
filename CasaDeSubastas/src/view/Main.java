@@ -175,7 +175,7 @@ public class Main {
                     	Pieza piezap1 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Comprador compradorp1 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap1);
                     	ArrayList<String[]> list = new ArrayList();
-                    	list = compradorp1.estadoPiezas();
+                    	//list = compradorp1.estadoPiezas();
                     	for(String[] linea: list)
                     	{
                     		System.out.println("Pieza: "+linea[2]);
@@ -186,7 +186,7 @@ public class Main {
                     	Pieza piezap2 = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Comprador compradorp2 = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap2);
                     	ArrayList<String[]> l = new ArrayList();
-                    	l = compradorp2.historialCompleto();
+                    	//l = compradorp2.historialCompleto();
                     	System.out.println("Historial Piezas de "+compradorp2.getNombre());
                     	for(String[] linea: l)
                     	{
@@ -207,7 +207,7 @@ public class Main {
                     case 7:
                     	Pieza piezap = new Pieza("Pablo Picasso", "La pintura", "03/01/1532", "China", "Bodega", 25000, "vendida", "Transferencia electronica", "Pintura");
                     	Comprador compradorp = new Comprador("Manuel", "Comprador", "C134", "3211913008", 50000, piezap);
-                    	Administrador.cambiarValorMaximoCompras(compradorp);
+                    	//Administrador.cambiarValorMaximoCompras(compradorp);
                     	String nombre = compradorp.getNombre();
                     	float limite = compradorp.getValorMaxCompra();
                     	System.out.println("El limite de "+ nombre+" aumentó a " + limite);

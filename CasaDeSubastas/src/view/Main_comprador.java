@@ -172,7 +172,7 @@ public class Main_comprador {
 	            for(String[] linea: list)
 	            {
 	                System.out.println("Pieza: "+linea[2]);
-	                System.out.println("Estado: "+linea[3]);
+	                System.out.println("Estado: "+linea[5]);
 	            }
 	            break;
             case 3:
