@@ -393,7 +393,7 @@ public class Main_admin {
     }
     
     public static void reqpieza(String[] args) throws FileNotFoundException, IOException {
-        String nombreObra = inputEnter("Digite el nombre del artista: ");
+        String nombreObra = inputEnter("Digite el nombre de la pieza: ");
 
         contarPiezas(nombreObra);
 

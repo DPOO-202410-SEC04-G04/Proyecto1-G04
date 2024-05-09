@@ -18,3 +18,4 @@ bbbb9195-c710-44f3-8381-7c2bbde75fb3;Yo;Agua;01/01/2017;Cali;Bodega;45.0;Vendida
 219ba164-6976-49ae-95c3-db9b42ab92b2;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
 744c3cef-842f-4156-9ca2-6a35be3c1be0;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
 d77d8286-80ab-4b92-9788-d57509464cfc;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
+df85f832-a544-4285-8d3e-35b9b7369680;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;2x2x2;Bonita
