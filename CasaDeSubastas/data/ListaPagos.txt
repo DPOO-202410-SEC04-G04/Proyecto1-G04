@@ -2,4 +2,11 @@
 7352;15000.0;cantin@comprador.com;pumba;Efectivo;
 8111;10000.0;cantin@comprador.com;termo;Efectivo;
 2832;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
-7494;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica
+7494;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+5520;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+6435;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+815;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+7419;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+3298;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+9504;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
+3691;25000.0;cantin@comprador.com;cali pachanguero;Transferencia electronica

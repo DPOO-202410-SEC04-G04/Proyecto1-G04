@@ -1,2 +1,2 @@
-cantin@comprador.com;9090;comprador;hs62hs729;30028172839;400000
-ggg@comprador.com;9090;comprador;jugyt6rf6yf6;3677754456;100000
+cantin@comprador.com;9090;comprador;hs62hs729;30028172839;1600000
+ggg@comprador.com;9090;comprador;jugyt6rf6yf6;3677754456;100000luna@comprador.com;1234;comprador;gs626wg27;30018273;50000armando@comprador.com;1234;comprador;jjue723;30631273;75000

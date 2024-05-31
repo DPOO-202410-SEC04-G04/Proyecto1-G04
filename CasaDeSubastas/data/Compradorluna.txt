@@ -1,0 +1,1 @@
+c5ec0ac8-201c-4075-b694-a40ae2d74923;Pablo Picasso;La pintura;03/01/1532;China;Bodega;25000.0;Vendida;Transferencia electronica;Pintura;true
