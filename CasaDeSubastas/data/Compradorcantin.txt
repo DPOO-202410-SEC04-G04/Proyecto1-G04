@@ -6,3 +6,4 @@ e5244c7c-9c92-44e0-b9d0-40cb53bfd2bd;Leonardo;Monalisa;03/03/2020;Italia;Bodega;
 e46ef7b6-3188-4c44-9a01-460efb6bc1e1;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;false
 97abe3f9-284b-4722-8d5b-8268b2799d43;Leonardo;Monalisa;03/03/2020;Italia;Bodega;25000.0;Disponible;Efectivo;Pintura;false
 782878d9-9455-424d-94e1-207798646dcb;grupo niche;cali pachanguero;12/12/1900;cali;Exhibida;15000.0;Disponible;Efectivo;cancion;false
+6e48dc56-ad86-4af6-a3fe-af15ca320116;jinete;caballo;12/12/1200;cali;Bodega;10000.0;Disponible;Tarjeta de Credito;Pintura;false

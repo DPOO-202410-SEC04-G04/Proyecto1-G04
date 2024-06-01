@@ -9,4 +9,5 @@
 7419;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
 3298;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
 9504;25000.0;cantin@comprador.com;Monalisa;Transferencia electronica;
-3691;25000.0;cantin@comprador.com;cali pachanguero;Transferencia electronica
+3691;25000.0;cantin@comprador.com;cali pachanguero;Transferencia electronica;
+567;10000.0;cantin@comprador.com;caballo;Tarjeta de Credito

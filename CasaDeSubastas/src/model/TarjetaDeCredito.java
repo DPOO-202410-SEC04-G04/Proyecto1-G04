@@ -6,7 +6,7 @@ public class TarjetaDeCredito extends Pagos{
     //----------------------------------------------
     // CONSTANTS
     //----------------------------------------------
-	public static final String METODO = "Tarjeta de credito";
+	public static final String METODO = "Tarjeta de Credito";
 
     //----------------------------------------------
     // ATTRIBUTES
@@ -16,13 +16,13 @@ public class TarjetaDeCredito extends Pagos{
 
     private int codigoSeguridad;
 
-    private Date fechaVencimiento;
+    private String fechaVencimiento;
 
     //----------------------------------------------
     // CONSTRUCTOR
     //----------------------------------------------
 
-    public TarjetaDeCredito(String id, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago, long numero, int codigoSeguridad, Date fechaVencimiento){
+    public TarjetaDeCredito(String id, float valorPago, Comprador comprador, Pieza piezaComprada, String formaPago, long numero, int codigoSeguridad, String fechaVencimiento){
         super(id, valorPago, comprador, piezaComprada, formaPago);
         this.numero = numero;
         this.codigoSeguridad = codigoSeguridad;
@@ -44,7 +44,7 @@ public class TarjetaDeCredito extends Pagos{
     	return this.codigoSeguridad;
     }
     
-    public Date getFechaVencimiento()
+    public String getFechaVencimiento()
     {
     	return this.fechaVencimiento;
     }
@@ -59,7 +59,7 @@ public class TarjetaDeCredito extends Pagos{
     	this.codigoSeguridad = codigoSeguridad;
     }
     
-    public void setFechaVencimiento(Date fechaVencimiento)
+    public void setFechaVencimiento(String fechaVencimiento)
     {
     	this.fechaVencimiento = fechaVencimiento;
     }
