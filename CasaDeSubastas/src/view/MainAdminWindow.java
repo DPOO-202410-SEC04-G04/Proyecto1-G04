@@ -81,7 +81,7 @@ public class MainAdminWindow extends JFrame {
         revalidate();
         repaint();
         
-        JPanel menuPanel = new JPanel(new GridLayout(8, 1));
+        JPanel menuPanel = new JPanel(new GridLayout(9, 1));
         
         JButton btnRegistrarPieza = new JButton("Registrar Pieza");
         btnRegistrarPieza.addActionListener(new ActionListener() {
@@ -147,6 +147,15 @@ public class MainAdminWindow extends JFrame {
         });
         menuPanel.add(btnHistorialPieza);
         
+        JButton btnCantidadVentas = new JButton("Cantidad Ventas");
+        btnCantidadVentas.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mostrarMenuArchivoVentas();
+            }
+        });
+        menuPanel.add(btnCantidadVentas);
+        
         JButton btnSalir = new JButton("Salir");
         btnSalir.addActionListener(new ActionListener() {
             @Override
@@ -159,6 +168,33 @@ public class MainAdminWindow extends JFrame {
         add(menuPanel);
         revalidate();
         repaint();
+    }
+    
+    
+    private void mostrarMenuArchivoVentas() {
+        String[] options = {"Ventas 2022", "Ventas 2023"};
+        int response = JOptionPane.showOptionDialog(this, "Seleccione el archivo de ventas que desea abrir:",
+                "Selección de Archivo", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+        if (response == 0) {
+            abrirArchivoExcel(".\\data\\Formatted_Sales_Data_2022.xlsx"); 
+        } else if (response == 1) {
+            abrirArchivoExcel(".\\data\\Formatted_Sales_Data_2023.xlsx"); 
+        }
+    }
+
+    
+    private void abrirArchivoExcel(String fileName) {
+        try {
+            File file = new File(fileName);
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+                Desktop.getDesktop().open(file);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se puede abrir el archivo en el sistema actual.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error al abrir el archivo: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void registrarPieza() throws IOException {
